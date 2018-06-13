@@ -15,6 +15,7 @@ passport.use(new LocalStrategy(
             if (!user) {
                 return done(null, false, {message: 'Unknown User'});
             }
+            console.log("done2")
 
 
             Controller.comparePassword(password, user.password, function (err, isMatch) {

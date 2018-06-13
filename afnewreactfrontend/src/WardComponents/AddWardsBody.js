@@ -99,6 +99,8 @@ export default class AddWardsBody extends Component{
             this.incharge='';
             this.phone = '';
             this.note = '';
+
+
         }
     }
 
@@ -178,17 +180,21 @@ export default class AddWardsBody extends Component{
                                                     <input className="form-control" onChange={event => this.onNameChangePhone(event)}/>
 
                                                 </div>
+
                                                 <div className="form-group">
                                                     <label>Note</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeNote(event)}/>
-
+                                                    <textarea className="form-control" rows="3" name="note" onChange={event => this.onNameChangeNote(event)}></textarea>
                                                 </div>
 
 
 
 
 
+
+
                                                 <button type="submit" className="btn btn-info" >Add</button>
+                                                <button type="submit" className="btn btn-info" >Reset</button>
+                                                <button type="submit" className="btn btn-info" >Back</button>
 
                                             </form>
                                         </div>
