@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const wardSchema = require('./wardSchema');
-;
+const patientAdmissionSchema = require('./patientWardAdmissionSchema');
+const patientRegSchema = require('./patientRegistrationSchema');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Inward',err =>{
+
+mongoose.connect('mongodb://127.0.0.1:27017/Inward', err =>{
     if(err) {
         console.error(err);
         process.exit(-2);
@@ -11,6 +13,9 @@ mongoose.connect('mongodb://127.0.0.1:27017/Inward',err =>{
 });
 
 mongoose.model('wardDetails',wardSchema);
+mongoose.model('patientWardAdmission',patientAdmissionSchema);
+mongoose.model('patientRegistration',patientRegSchema);
+
 
 
 module.exports = mongoose;
