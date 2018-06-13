@@ -36,3 +36,11 @@
     margin-top: -9em; /*set to a negative number 1/2 of your height*/
     margin-left: -15em;
 }
+
+.content-wrapper{
+    position: absolute;
+    top: 150px;
+    left: 400px;
+    border-style: double;
+    border-color: #0d6aad;
+}
