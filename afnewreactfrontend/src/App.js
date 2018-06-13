@@ -3,12 +3,14 @@ import {BrowserRouter , Route} from 'react-router-dom';
 // import Home from './LoginContainer/Homepage';
 //  import Login from './LoginContainer/Loginbody';
 //  import Register from './LoginContainer/RegisterBody';
-// import Mainpage from './WardComponents/Mainpage';
+ import Mainpage from './WardComponents/Mainpage';
+import PatientMainpage from './PatientComponents/PatientMainpage';
+
 // import samplecenter from './WardComponents/SampleCenters';
-import Mainpage from './WardComponents/Mainpage';
-import ViewWards from './WardComponents/ViewWards';
-import AddWards from './WardComponents/AddWards';
-import ManageWards from './WardComponents/ManageWards';
+// import Mainpage from './WardComponents/Mainpage';
+// import ViewWards from './WardComponents/ViewWards';
+// import AddWards from './WardComponents/AddWards';
+// import ManageWards from './WardComponents/ManageWards';
 
 
 class App extends Component {
@@ -19,9 +21,10 @@ class App extends Component {
                 {/*<Route path="/login" component={Login}/>*/}
                 {/*<Route path="/register" component={Register}/>*/}
                 <Route path="/Mainpage" component={Mainpage}/>
-                <Route path="/viewwards" component={ViewWards}/>
-                <Route path="/addwards" component={AddWards}/>
-                <Route path="/manageward" component={ManageWards}/>
+                <Route path="/PatientMainpage" component={PatientMainpage}/>
+                {/*<Route path="/viewwards" component={ViewWards}/>*/}
+                {/*<Route path="/addwards" component={AddWards}/>*/}
+                {/*<Route path="/manageward" component={ManageWards}/>*/}
             </div>
         </BrowserRouter>
 
