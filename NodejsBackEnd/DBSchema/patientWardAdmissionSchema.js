@@ -43,5 +43,4 @@ const patientWardAdmissionSchema =new Schema({
 
 mongoose.model('patientWardAdmission',patientWardAdmissionSchema);
 
-module.exports = mongoose;
-//module.exports=patientWardAdmissionSchema;
+module.exports = patientWardAdmissionSchema;
