@@ -6,6 +6,9 @@ import {BrowserRouter , Route} from 'react-router-dom';
 // import Mainpage from './WardComponents/Mainpage';
 //import samplecenter from './WardComponents/SampleCenters';
 import Mainpage from './WardComponents/Mainpage';
+import ViewWards from './WardComponents/ViewWards';
+import AddWards from './WardComponents/AddWards';
+import ManageWards from './WardComponents/ManageWards';
 
 
 class App extends Component {
@@ -16,7 +19,9 @@ class App extends Component {
                 {/*<Route path="/login" component={Login}/>*/}
                 {/*<Route path="/register" component={Register}/>*/}
                 {/*<Route path="/Mainpage" component={Mainpage}/>*/}
-                <Route path="/mainpage" component={Mainpage}/>
+                <Route path="/viewwards" component={ViewWards}/>
+                <Route path="/addwards" component={AddWards}/>
+                <Route path="/manageward" component={ManageWards}/>
             </div>
         </BrowserRouter>
 
