@@ -39,8 +39,10 @@
 
 .content-wrapper{
     position: absolute;
-    top: 150px;
-    left: 400px;
+    top: 60px;
+    left: 4px;
+    width:1500px;
+    height:60px;
     border-style: double;
     border-color: #0d6aad;
 }
