@@ -2,6 +2,7 @@
 
 const mongoose = require('../DBSchema/DBConfig');
 const userSchema = mongoose.model('User');
+const bcrypt = require('bcryptjs');
 
 const Controller = function () {
     
@@ -24,6 +25,22 @@ const Controller = function () {
             });
         })
 
+    }
+
+    this.getuserByuserName = function (data , callback) {
+
+            userSchema.findOne({username: data} , callback);
+    }
+
+    this.comparePassword = function (canpassword , hash , callback) {
+        bcrypt.compare(canpassword , hash , function (err , isMatch) {
+            if(err) throw err;
+            callback(null , isMatch);
+        })
+    }
+
+    this.getUserById = function (id , callback) {
+        userSchema.findOne({_id:id} , callback);
     }
 }
 
