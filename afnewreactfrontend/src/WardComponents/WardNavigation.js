@@ -31,6 +31,7 @@ export default class WardNavigation extends Component{
                             <span className="nav-link-text">Manage wards</span>
                         </a>
                     </li>
+
                 </ul>
                 <ul className="navbar-nav sidenav-toggler">
                     <li className="nav-item">
