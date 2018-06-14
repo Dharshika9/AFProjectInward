@@ -1,0 +1,32 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const laborityTestSchema = new Schema({
+    testId: {
+        type: Number,
+        require: true
+    },
+    patientId: {
+        type: Number,
+        require: true
+    },
+    testType: {
+        type: String,
+        required: true
+    },
+    PatientStatus: {
+        type: String,
+        require: true
+    },
+    description: {
+        type: Number,
+        require: true
+
+
+    }
+
+})
+
+mongoose.model('laborityTest',laborityTestSchema);
+module.exports=mongoose;
+//module.exports=laborityTestSchema;

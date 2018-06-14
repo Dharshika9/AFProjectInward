@@ -5,6 +5,8 @@ const patientAdmissionSchema = require('./patientWardAdmissionSchema');
 const patientRegSchema = require('./patientRegistrationSchema');
 
 const userSchema = require('./userSchema');
+const laborityTestSchema = require('./laborityTestSchema');
+
 
 
 
@@ -24,6 +26,7 @@ mongoose.model('patientRegistration',patientRegSchema);
 
 
 mongoose.model('User' , userSchema);
+mongoose.model('Test' , laborityTestSchema);
 
 
 module.exports = mongoose;

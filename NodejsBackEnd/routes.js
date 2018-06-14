@@ -8,7 +8,7 @@ const wardAdmissionRoute = require('./ApplicationRoutes/patientWardAdmission.rou
 const patientRegRoute = require('./ApplicationRoutes/patientReg.routes');
 const userRoute = require('./ApplicationRoutes/user.routes');
 const loginRoute = require('./ApplicationRoutes/login.routes');
-
+const laborityTestRoute = require('./ApplicationRoutes/laborityTest.routes');
 
 
 router.use('/wards/' , wardRoute);
@@ -19,6 +19,7 @@ router.use('/register/',patientRegRoute);
 router.use('/user/' , userRoute);
 
 router.use('/login/' , loginRoute);
+router.use('/Test/',laborityTestRoute);
 
 
 module.exports = router;
