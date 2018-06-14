@@ -25,7 +25,7 @@ class AddWards extends Component {
             note: ward.note
         }).then(result => {
             if(result.status == 200) {
-                console.log("SuccessFully Added!");
+                alert("Ward SuccessFully Added!");
 
 
 

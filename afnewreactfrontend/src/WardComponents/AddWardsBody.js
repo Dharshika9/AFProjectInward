@@ -117,7 +117,7 @@ export default class AddWardsBody extends Component{
         return <div className="content-wrapper">
             <div className="container-fluid">
 
-                <div className="container">
+
 
                     <div className="row">
                         <div className="col-lg-4">
@@ -212,6 +212,6 @@ export default class AddWardsBody extends Component{
                 </div>
 
             </div>
-        </div>
+
     }
 }

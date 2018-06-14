@@ -42,4 +42,20 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+router.get('/get_specific_ward/:id', (req, res) => {
+    controller.getSpecificWard(req.params.id).then(response => {
+        res.status(response.status).send(response.data);
+    }).catch(err => {
+        res.status(err.status).send(err.message);
+    })
+})
+
+router.delete('/delete_specific_ward/:id', (req, res) => {
+    controller.deleteSpecificWard(req.params.id).then(response => {
+        res.status(response.status).send(response);
+    }).catch(err => {
+        res.status(err.status).send(err.message);
+    })
+})
+
 module.exports = router;
