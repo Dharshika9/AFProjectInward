@@ -119,6 +119,8 @@ export default class AddWardsBody extends Component{
 
 
 
+
+               < div className="container-new">
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="panel panel-default">
@@ -128,6 +130,7 @@ export default class AddWardsBody extends Component{
                                 <div className="panel-body">
                                     <div className="row">
                                         <div className="col-lg-10">
+                                            <div className="ward-main ">
                                             <form role="form" onSubmit={event => this.onSubmit(event)}>
 
                                                 <div className="form-group">
@@ -209,6 +212,8 @@ export default class AddWardsBody extends Component{
 
                     </div>
 
+                </div>
+                </div>
                 </div>
 
             </div>

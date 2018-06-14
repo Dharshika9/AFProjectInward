@@ -27,7 +27,7 @@ export default class ManageWardsBody extends Component{
             console.log(this.state.ward);
 
 
-        });
+        }).then();
 
     }
 
@@ -45,6 +45,14 @@ export default class ManageWardsBody extends Component{
 
     }
 
+    delete(wardNo) {
+        axios.delete('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(results => {
+            if(results.status == 200) {
+                alert("Ward SuccessFully Deleted!");
+            }
+        })
+    }
+
     render(){
 
 
@@ -55,28 +63,20 @@ export default class ManageWardsBody extends Component{
 
 
 
-                    <div className="container-new">
+                    <div className="container-new ">
 
 
                         <div className="panel-body">
                             <form onSubmit={event => this.getSpecificWard(event)} role="form">
                                 <div className="form-group">
-                                    <label>Ward Details</label>
+                                    <label>Enter Ward No : </label>
                                     <input className="form-control-new" placeholder="Enter text" name="wardNo"/>
                                 </div>
-                                <button type="submit" className="btn btn-primary">View Details</button>
-
-                            </form>
-                            <form onSubmit={event => this.deleteSpecificWard(event)} role="form">
-                                <div className="form-group">
-                                    <label>Ward No</label>
-                                    <input className="form-control-new" placeholder="Enter text" name="wardNo"/>
-                                </div>
-                                <button type="submit" className="btn btn-primary">Delete</button>
+                                <button type="submit" className="btn btn-info">View Details</button>
 
                             </form>
 
-                            <div className="table-responsive new_table">
+                            <div className="table-responsive">
                                 <table className="table">
                                     <thead>
                                     <tr>
@@ -89,6 +89,7 @@ export default class ManageWardsBody extends Component{
                                         <th>Incharge</th>
                                         <th>Phone</th>
                                         <th>Note</th>
+                                        <th>Delete</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -103,6 +104,7 @@ export default class ManageWardsBody extends Component{
                                             <td>{entry.incharge}</td>
                                             <td>{entry.phone}</td>
                                             <td>{entry.note}</td>
+                                            <td> <button className="btn btn-info" onClick={(e) => this.delete(this.state.ward.wardNo || this.state.ward.wardNo)}>Delete</button></td>
                                         </tr>)
                                     }
 
@@ -125,6 +127,7 @@ export default class ManageWardsBody extends Component{
                                     <div className="panel-body">
                                         <div className="row">
                                             <div className="col-lg-10">
+                                                <div className="ward-main ">
                                                 <form role="form" >
 
 
@@ -137,6 +140,7 @@ export default class ManageWardsBody extends Component{
                                                         <button className="btn btn-secondary" type="button" onSubmit={event => this.getSpecificWard(event)}>Go!</button>
                                                         </span>
                                                     </div>
+
 
 
 
@@ -208,6 +212,7 @@ export default class ManageWardsBody extends Component{
                                                     <button type="submit" className="btn btn-info" >Back</button>
 
                                                 </form>
+                                                </div>
                                             </div>
 
                                         </div>
@@ -221,7 +226,7 @@ export default class ManageWardsBody extends Component{
 
                 </div>
             </div>
-                }
+
 
 
 
