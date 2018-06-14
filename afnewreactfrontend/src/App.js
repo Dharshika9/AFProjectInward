@@ -24,7 +24,7 @@ class App extends Component {
         return <BrowserRouter>
             <div>
 
-                <Route path="/" component={Home}/>
+                <Route path="/" component={Home} exact/>
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register}/>
                 <Route path="/Mainpage" component={Mainpage}/>
@@ -34,7 +34,7 @@ class App extends Component {
                 <Route path="/BedMainPage" component={BedMainpage}/>
                 <Route path="/regPatient" component={regMainPatient}/>
                 <Route path="/admitPatient" component={admitPatient}/>
-             
+
 
             </div>
         </BrowserRouter>
