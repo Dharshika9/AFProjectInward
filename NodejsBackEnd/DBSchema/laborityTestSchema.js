@@ -28,5 +28,5 @@ const laborityTestSchema = new Schema({
 })
 
 mongoose.model('laborityTest',laborityTestSchema);
-module.exports=mongoose;
-//module.exports=laborityTestSchema;
+
+module.exports=laborityTestSchema;

@@ -22,11 +22,9 @@ mongoose.model('wardDetails',wardSchema);
 
 mongoose.model('patientWardAdmission',patientAdmissionSchema);
 mongoose.model('patientRegistration',patientRegSchema);
-
-
-
+mongoose.model('laborityTest' , laborityTestSchema);
 mongoose.model('User' , userSchema);
-mongoose.model('Test' , laborityTestSchema);
+
 
 
 module.exports = mongoose;
