@@ -194,7 +194,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NodejsBackEnd" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -230,12 +230,12 @@
       <workItem from="1528736022853" duration="993000" />
       <workItem from="1528737022042" duration="4167000" />
       <workItem from="1528783120251" duration="27042000" />
-      <workItem from="1528892827626" duration="283000" />
+      <workItem from="1528892827626" duration="889000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32485000" />
+    <option name="totallyTimeSpent" value="33091000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />

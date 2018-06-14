@@ -41,6 +41,7 @@ const patientRegistrationSchema = new Schema({
 
 })
 
-mongoose.model('patientRegistration',patientRegistrationSchema);
-module.exports=mongoose;
-//module.exports=patientRegistrationSchema;
+
+
+
+module.exports = patientRegistrationSchema;

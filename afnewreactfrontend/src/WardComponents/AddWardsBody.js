@@ -99,14 +99,10 @@ export default class AddWardsBody extends Component{
             this.incharge='';
             this.phone = '';
             this.note = '';
+
+
         }
     }
-
-
-
-
-
-
 
     render(){
 
@@ -115,8 +111,7 @@ export default class AddWardsBody extends Component{
         return <div className="content-wrapper">
             <div className="container-fluid">
 
-                <div className="container">
-
+               < div className="container-new">
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="panel panel-default">
@@ -126,6 +121,7 @@ export default class AddWardsBody extends Component{
                                 <div className="panel-body">
                                     <div className="row">
                                         <div className="col-lg-10">
+                                            <div className="ward-main ">
                                             <form role="form" onSubmit={event => this.onSubmit(event)}>
 
                                                 <div className="form-group">
@@ -178,17 +174,15 @@ export default class AddWardsBody extends Component{
                                                     <input className="form-control" onChange={event => this.onNameChangePhone(event)}/>
 
                                                 </div>
+
                                                 <div className="form-group">
                                                     <label>Note</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeNote(event)}/>
-
+                                                    <textarea className="form-control" rows="3" name="note" onChange={event => this.onNameChangeNote(event)}></textarea>
                                                 </div>
 
-
-
-
-
                                                 <button type="submit" className="btn btn-info" >Add</button>
+                                                <button type="reset" className="btn btn-info" >Reset</button>
+
 
                                             </form>
                                         </div>
@@ -204,8 +198,10 @@ export default class AddWardsBody extends Component{
                     </div>
 
                 </div>
+                </div>
+                </div>
 
             </div>
-        </div>
+
     }
 }
