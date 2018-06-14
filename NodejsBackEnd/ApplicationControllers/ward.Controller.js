@@ -65,6 +65,25 @@ var wardController = function() {
         })
     }
 
+    this.getSpecificWard=function(id) {
+        return new Promise((resolve, reject) => {
+            wardSchema.find({wardNo: id}).exec().then(data => {
+                resolve({'status': 200, 'message':'Get single data', 'data': data});
+            }).catch(err => {
+                reject({'status': 404, 'message':'err:-'+err});
+            })
+        })
+    }
+    this.deleteSpecificWard = function(id) {
+        return new Promise((resolve, reject) => {
+            wardSchema.remove({wardNo: id}).then(() => {
+                resolve({'status': 200, 'message':'Delete ward'});
+            }).catch(err => {
+                reject({'status': 404, 'message':'err:-'+err});
+            })
+        })
+    }
+
 }
 
 module.exports = new wardController();
