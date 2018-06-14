@@ -1,21 +1,20 @@
 import React , {Component} from 'react';
 import PropTypes 			from "prop-types";
 
-export default class AddWardsBody extends Component{
 
-
+export  default class admitPatientBody extends Component{
     static get propTypes() {
         return {
-            addWard: PropTypes.func,
-            wardNo: PropTypes.string,
-            wardType: PropTypes.string,
-            noOfBeds: PropTypes.number,
-            availableBeds: PropTypes.number,
-            location: PropTypes.string,
-            visitingTimes: PropTypes.string,
-            incharge: PropTypes.string,
-            phone: PropTypes.number,
-            note: PropTypes.string
+
+            BHTNumber: PropTypes.number,
+            wardNo: PropTypes.number,
+            bedNumber: PropTypes.String,
+            patientId: PropTypes.number,
+            patientName: PropTypes.String,
+            admittedDate: PropTypes.String,
+            admittedTime: PropTypes.String,
+            DoctorInCharge: PropTypes.String,
+            patientComplain: PropTypes.String
 
         }
     }
@@ -23,57 +22,6 @@ export default class AddWardsBody extends Component{
     constructor(props) {
         super(props);
     }
-
-    onNameChangeWardNo(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.wardNo = event.target.value;
-    }
-
-
-    onNameChangeWardType(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.wardType = event.target.value;
-    }
-
-    onNameChangeNoOfBeds(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.noOfBeds= event.target.value;
-    }
-    onNameChangeAvailableBeds(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.availableBeds = event.target.value;
-    }
-    onNameChangeLocation(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.location = event.target.vvalue;
-    }
-    onNameChangeVisitingTimes(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.visitingTimes = event.target.value;
-    }
-    onNameChangeIncharge(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.incharge = event.target.value;
-    }
-
-    onNameChangePhone(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.phone = event.target.value;
-    }
-    onNameChangeNote(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        this.note = event.target.value;
-    }
-
 
     onSubmit(event) {
         event.preventDefault();
@@ -101,11 +49,6 @@ export default class AddWardsBody extends Component{
             this.note = '';
         }
     }
-
-
-
-
-
 
 
     render(){
@@ -208,4 +151,5 @@ export default class AddWardsBody extends Component{
             </div>
         </div>
     }
+
 }

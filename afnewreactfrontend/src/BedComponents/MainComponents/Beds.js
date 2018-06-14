@@ -1,13 +1,13 @@
 'use strict';
 import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
-import Ward                from './Ward';
+import Bed                from './Bed';
 
+class Beds extends Component{
 
-class Wards extends Component {
     static get propTypes() {
         return {
-            wards: PropTypes.array
+            beds: PropTypes.array
         }
     }
 
@@ -19,18 +19,18 @@ class Wards extends Component {
         this.setState(props)
     }
 
-    render() {
-        this.wards = this.props.wards;
+    render(){this.beds = this.props.beds;
         return <div>
 
             {
 
-                this.wards.map(ward => {
-                    return <Ward key={ward._id || ward.id} ward={ward} getWardDetails={() => this.props.getWardDetails()}/>
+                this.beds.map(bed => {
+                    return <Bed key={bed._id || bed.id} bed={bed} getBeDetails={() => this.props.getBeDetails()}/>
                 })
             }
 
         </div>;
     }
 }
-export default Wards
+
+export default Beds;
