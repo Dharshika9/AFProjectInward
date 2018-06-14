@@ -7,8 +7,8 @@ class ViewWards extends Component {
     render() {
         return<div>
             <WardNavigation/>
-            {console.log(this.props.location)}
-            <ViewWardsBody referrer = {this.props.location.state.referrer}/>
+            {console.log(this.props.location.state.referrer)}
+            <ViewWardsBody/>
         </div>
     }
 }
