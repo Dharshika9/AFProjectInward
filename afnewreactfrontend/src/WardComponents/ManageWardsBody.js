@@ -13,6 +13,11 @@ export default class ManageWardsBody extends Component{
 
 
 
+
+
+
+
+
     render(){
 
 
