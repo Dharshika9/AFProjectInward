@@ -26,6 +26,10 @@ class AddWards extends Component {
         }).then(result => {
             if(result.status == 200) {
                 console.log("SuccessFully Added!");
+
+
+
+
             }
         }).catch(err => {
             alert(err);
