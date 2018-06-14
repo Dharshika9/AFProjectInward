@@ -28,7 +28,7 @@ const loginRoute = require('./ApplicationRoutes/login.routes');
 router.use('/wards/' , wardRoute);
 
 router.use('/admission/',wardAdmissionRoute);
-router.use('/register/',patientRegRoute);
+router.use('/register',patientRegRoute);
 
 router.use('/user/' , userRoute);
 
