@@ -3,8 +3,6 @@ import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
 import reactDOM from 'react-dom';
 
-
-
 export default class Ward extends Component {
     static get propTypes() {
         return {
@@ -25,6 +23,9 @@ export default class Ward extends Component {
         event.preventDefault();
         event.stopPropagation();
 
+
+
+
     }
 
     render() {
@@ -35,9 +36,9 @@ export default class Ward extends Component {
 
 
         return<div>
-            <div className="container">
 
-                <div className="card bg-light mb-3" style={style}>
+
+                <div className="card bg-light mb-3 Row" style={style}>
                     <div className="card-header" style={textAlign}>Ward No - {this.ward.wardNo}</div>
                     <div className="card-body">
 
@@ -51,7 +52,7 @@ export default class Ward extends Component {
 
 
 
-                    </div>
+
                 </div>
 
 

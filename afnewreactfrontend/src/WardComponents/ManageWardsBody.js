@@ -7,10 +7,11 @@ export default class ManageWardsBody extends Component{
     constructor(props){
         super(props);
         this.state={
-            ward :[],
+            ward :[]
 
         };
         this.getSpecificWard=this.getSpecificWard.bind(this);
+
     }
 
     getSpecificWard=function(event){
@@ -25,19 +26,24 @@ export default class ManageWardsBody extends Component{
 
             console.log(this.state.ward);
 
+
         });
+
     }
 
-
-    deleteSpecificWard=function(event) {
+    deleteSpecificWard=function(event){
         event.preventDefault();
-        axios.delete('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(results => {
-            if(results.status == 200) {
+        const wardNo=event.target.elements.wardNo.value;
+        axios.get('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(res =>{
+
+
+            if(res.status == 200) {
+                alert("Ward SuccessFully Deleted!");
 
             }
-        })
-    }
+        });
 
+    }
 
     render(){
 
@@ -59,7 +65,15 @@ export default class ManageWardsBody extends Component{
                                     <input className="form-control-new" placeholder="Enter text" name="wardNo"/>
                                 </div>
                                 <button type="submit" className="btn btn-primary">View Details</button>
-                                <button className="btn btn-primary" onSubmit={event => this.deleteSpecificWard(event)}>Delete</button>
+
+                            </form>
+                            <form onSubmit={event => this.deleteSpecificWard(event)} role="form">
+                                <div className="form-group">
+                                    <label>Ward No</label>
+                                    <input className="form-control-new" placeholder="Enter text" name="wardNo"/>
+                                </div>
+                                <button type="submit" className="btn btn-primary">Delete</button>
+
                             </form>
 
                             <div className="table-responsive new_table">
@@ -117,10 +131,10 @@ export default class ManageWardsBody extends Component{
                                                     <div className="input-group">
                                                         <label>Enter Ward No</label>
                                                         <input type="text" className="form-control"
-                                                               placeholder="Search for..."/>
+                                                               placeholder="Search for..." name="wardNo"/>
 
                                                         <span className="input-group-btn">
-                                                        <button className="btn btn-secondary" type="button">Go!</button>
+                                                        <button className="btn btn-secondary" type="button" onSubmit={event => this.getSpecificWard(event)}>Go!</button>
                                                         </span>
                                                     </div>
 
@@ -129,7 +143,7 @@ export default class ManageWardsBody extends Component{
 
                                                     <div className="form-group">
                                                         <label>Ward No</label>
-                                                        <input className="form-control"/>
+                                                        <input className="form-control"  />
 
                                                     </div>
 
