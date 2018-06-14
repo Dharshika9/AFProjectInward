@@ -46,6 +46,7 @@ export default class ManageWardsBody extends Component{
     }
 
     delete(wardNo) {
+        console.log(wardNo);
         axios.delete('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(results => {
             if(results.status == 200) {
                 alert("Ward SuccessFully Deleted!");
@@ -61,10 +62,7 @@ export default class ManageWardsBody extends Component{
         return <div className="content-wrapper">
             <div className="container-fluid">
 
-
-
                     <div className="container-new ">
-
 
                         <div className="panel-body">
                             <form onSubmit={event => this.getSpecificWard(event)} role="form">
@@ -104,7 +102,7 @@ export default class ManageWardsBody extends Component{
                                             <td>{entry.incharge}</td>
                                             <td>{entry.phone}</td>
                                             <td>{entry.note}</td>
-                                            <td> <button className="btn btn-info" onClick={(e) => this.delete(this.state.ward.wardNo || this.state.ward.wardNo)}>Delete</button></td>
+                                            <td> <button className="btn btn-info" onClick={(e) => this.delete(entry.wardNo)}>Delete</button></td>
                                         </tr>)
                                     }
 
@@ -113,10 +111,6 @@ export default class ManageWardsBody extends Component{
                             </div>
 
                         </div>
-
-
-
-
 
                         <div className="row">
                             <div className="col-lg-4">
@@ -142,9 +136,6 @@ export default class ManageWardsBody extends Component{
                                                     </div>
 
 
-
-
-
                                                     <div className="form-group">
                                                         <label>Ward No</label>
                                                         <input className="form-control"  />
@@ -160,9 +151,6 @@ export default class ManageWardsBody extends Component{
 
                                                         </select>
                                                     </div>
-
-
-
 
 
                                                     <div className="form-group">
@@ -201,15 +189,9 @@ export default class ManageWardsBody extends Component{
                                                         <textarea className="form-control" rows="3" name="note" ></textarea>
                                                     </div>
 
-
-
-
-
-
-
                                                     <button type="submit" className="btn btn-info" >Update</button>
                                                     <button type="submit" className="btn btn-info" >Delete</button>
-                                                    <button type="submit" className="btn btn-info" >Back</button>
+                                                    <button type="reset" className="btn btn-info" >Reset</button>
 
                                                 </form>
                                                 </div>

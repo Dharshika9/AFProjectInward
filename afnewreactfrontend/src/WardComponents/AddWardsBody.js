@@ -104,21 +104,12 @@ export default class AddWardsBody extends Component{
         }
     }
 
-
-
-
-
-
-
     render(){
 
         var style={width: 300}
         var textAlign={textAlign: "center"}
         return <div className="content-wrapper">
             <div className="container-fluid">
-
-
-
 
                < div className="container-new">
                     <div className="row">
@@ -189,15 +180,9 @@ export default class AddWardsBody extends Component{
                                                     <textarea className="form-control" rows="3" name="note" onChange={event => this.onNameChangeNote(event)}></textarea>
                                                 </div>
 
-
-
-
-
-
-
                                                 <button type="submit" className="btn btn-info" >Add</button>
-                                                <button type="submit" className="btn btn-info" >Reset</button>
-                                                <button type="submit" className="btn btn-info" >Back</button>
+                                                <button type="reset" className="btn btn-info" >Reset</button>
+
 
                                             </form>
                                         </div>

@@ -20,6 +20,7 @@ import AddWards from './WardComponents/AddWards';
 import ManageWards from './WardComponents/ManageWards';
 
 
+
 class App extends Component {
     render() {
         return <BrowserRouter>
@@ -42,6 +43,7 @@ class App extends Component {
                 <Route path="/viewwards" component={ViewWards}/>
                 <Route path="/addwards" component={AddWards}/>
                 <Route path="/manageward" component={ManageWards}/>
+
             </div>
         </BrowserRouter>
 
