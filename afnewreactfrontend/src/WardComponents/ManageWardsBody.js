@@ -5,7 +5,7 @@ import events from 'events';
 export default class ManageWardsBody extends Component{
 
     constructor(props){
-        super(props);
+  -      super(props);
         this.state={
             ward :[]
 
@@ -13,6 +13,7 @@ export default class ManageWardsBody extends Component{
         this.getSpecificWard=this.getSpecificWard.bind(this);
 
     }
+
 
     getSpecificWard=function(event){
         event.preventDefault();
@@ -31,28 +32,9 @@ export default class ManageWardsBody extends Component{
 
     }
 
-    deleteSpecificWard=function(event){
-        event.preventDefault();
-        const wardNo=event.target.elements.wardNo.value;
-        axios.get('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(res =>{
 
 
-            if(res.status == 200) {
-                alert("Ward SuccessFully Deleted!");
 
-            }
-        });
-
-    }
-
-    delete(wardNo) {
-        console.log(wardNo);
-        axios.delete('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(results => {
-            if(results.status == 200) {
-                alert("Ward SuccessFully Deleted!");
-            }
-        })
-    }
 
     render(){
 

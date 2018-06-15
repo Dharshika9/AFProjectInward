@@ -15,7 +15,7 @@ import ManageWards from './WardComponents/ManageWards';
 import BedMainpage from './BedComponents/BedMainPage';
 import regMainPatient from './BedComponents/regMainPatient';
 import admitPatient from './BedComponents/admitPatient'
-
+import viewBeds from './BedComponents/viewBeds';
 
 
 
@@ -35,6 +35,7 @@ class App extends Component {
                 <Route path="/BedMainPage" component={BedMainpage}/>
                 <Route path="/regPatient" component={regMainPatient}/>
                 <Route path="/admitPatient" component={admitPatient}/>
+                <Route path="/viewBeds" component={viewBeds}/>
 
 
             </div>

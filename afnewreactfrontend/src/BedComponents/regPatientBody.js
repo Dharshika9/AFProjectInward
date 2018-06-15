@@ -24,35 +24,6 @@ export default class regPatientBody extends Component{
         super(props);
     }
 
-    onSubmit(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        if (this.patientId&&this.patientName&&this.patientDOB&&this.patientAge&&this.patientGender&&this.patientNIC&&this.patientStatus&&this.patientContactNo&&this.patientAddress) {
-            this.props.regPatient
-            ({
-                patientId: this.patientId,
-                patientName: this.patientName,
-                patientDOB: this.patientDOB,
-                patientAge: this.patientAge,
-                patientGender: this.patientGender,
-                patientNIC: this.patientNIC,
-                patientStatus:this.patientStatus,
-                patientContactNo: this.patientContactNo,
-                patientAddress: this.patientAddress
-            });
-            this.patientId = '';
-            this.patientName = '';
-            this.patientDOB = '';
-            this.patientAge = '';
-            this.patientGender = '';
-            this.patientNIC = '';
-            this.patientStatus='';
-            this.patientContactNo = '';
-            this.patientAddress = '';
-        }
-    }
-
     onNameChangepatientId(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -102,6 +73,37 @@ export default class regPatientBody extends Component{
         this.patientName = event.target.value;
     }
 
+    onSubmit(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        if (this.patientId&&this.patientName&&this.patientDOB&&this.patientAge&&this.patientGender&&this.patientNIC&&this.patientStatus&&this.patientContactNo&&this.patientAddress) {
+            this.props.regPatient
+            ({
+                patientId: this.Number,
+                patientName: this.String,
+                patientDOB: this.String,
+                patientAge: this.Number,
+                patientGender: this.String,
+                patientNIC: this.String,
+                patientStatus:this.String,
+                patientContactNo: this.Number,
+                patientAddress: this.String
+            });
+            this.patientId = '';
+            this.patientName = '';
+            this.patientDOB = '';
+            this.patientAge = '';
+            this.patientGender = '';
+            this.patientNIC = '';
+            this.patientStatus='';
+            this.patientContactNo = '';
+            this.patientAddress = '';
+        }
+    }
+
+
+
 
     render(){
         var style={width: 300}
@@ -130,6 +132,14 @@ export default class regPatientBody extends Component{
                                                 </div>
 
                                                 {/*patientName*/}
+                                                <div className="form-group">
+                                                    <label>Patient Name</label>
+                                                    <input className="form-control"  onChange={event => this.onNameChangepatientName(event)}/>
+
+                                                </div>
+
+                                                {/*patientDOB*/}
+                                                {/*datePicker :-( */}
                                                 <div className="form-group">
                                                     <label>Patient Name</label>
                                                     <input className="form-control"  onChange={event => this.onNameChangepatientName(event)}/>
@@ -197,7 +207,8 @@ export default class regPatientBody extends Component{
 
                                                 </div>
 
-                                                <button type="submit" className="btn btn-info" >Register Patient</button>
+                                                <button type="submit" className="btn btn-info">Register Patient</button>
+                                                {/*should have a link to admitpatient*/}
 
                                             </form>
                                         </div>

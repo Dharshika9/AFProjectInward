@@ -11,6 +11,8 @@ export default class Ward extends Component {
         }
     }
 
+
+
     constructor(props) {
         super(props);
         this.ward = this.props.ward;

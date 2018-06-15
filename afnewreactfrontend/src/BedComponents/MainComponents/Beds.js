@@ -25,7 +25,7 @@ class Beds extends Component{
             {
 
                 this.beds.map(bed => {
-                    return <Bed key={bed._id || bed.id} bed={bed} getBeDetails={() => this.props.getBeDetails()}/>
+                    return <Bed key={bed._id || bed.id} bed={bed} getBedDetails={() => this.props.getBedDetails()}/>
                 })
             }
 

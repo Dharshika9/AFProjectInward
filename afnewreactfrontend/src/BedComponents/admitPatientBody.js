@@ -2,10 +2,17 @@ import React , {Component} from 'react';
 import PropTypes 			from "prop-types";
 
 
+const date=new Date(Date.now()).toDateString()
+const time=new Date(Date.now()).toLocaleTimeString()
+
+
 export  default class admitPatientBody extends Component{
+
+
     static get propTypes() {
         return {
 
+            admitPatient:PropTypes.func,
             BHTNumber: PropTypes.number,
             wardNo: PropTypes.number,
             bedNumber: PropTypes.String,
@@ -26,30 +33,84 @@ export  default class admitPatientBody extends Component{
     onSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
-        if (this.wardNo&&this.wardType&&this.noOfBeds&&this.availableBeds&&this.location&&this.visitingTimes&&this.incharge&&this.phone&&this.note) {
-            this.props.addWard
-            ({wardNo: this.wardNo,
-                wardType: this.wardType,
-                noOfBeds: this.noOfBeds,
-                availableBeds: this.availableBeds,
-                location: this.location,
-                visitingTimes: this.visitingTimes,
-                incharge:this.incharge,
-                phone: this.phone,
-                note: this.note
+        if (this.BHTNumber&&this.wardNo&&this.bedNumber&&this.patientId&&this.patientName&&this.admittedDate&&this.admittedTime&&this.DoctorInCharge&&this.patientComplain) {
+            this.props.admitPatient
+            ({
+                BHTNumber: this.BHTNumber,
+                wardNo: this.wardNo,
+                bedNumber: this.bedNumber,
+                patientId: this.patientId,
+                patientName: this.patientName,
+                admittedDate: this.admittedDate,
+                admittedTime:this.admittedTime,
+                DoctorInCharge: this.DoctorInCharge,
+                patientComplain: this.patientComplain
             });
+            this.BHTNumber = '';
             this.wardNo = '';
-            this.wardType = '';
-            this.noOfBeds = '';
-            this.availableBeds = '';
-            this.location = '';
-            this.visitingTimes = '';
-            this.incharge='';
-            this.phone = '';
-            this.note = '';
+            this.bedNumber = '';
+            this.patientId = '';
+            this.patientName = '';
+            this.admittedDate = '';
+            this.admittedTime='';
+            this.DoctorInCharge = '';
+            this.patientComplain = '';
         }
     }
 
+
+
+    onNameChangeBHTNumber(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+
+    onNameChangewardNumber(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangebedNumber(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangebedNumber(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangepatientId(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangepatientName(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangeadmittedDate(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangeadmittedTime(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangeIncharge(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
+    onNameChangepatientComplain(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        this.wardType = event.target.value;
+    }
 
     render(){
 
@@ -71,67 +132,78 @@ export  default class admitPatientBody extends Component{
                                         <div className="col-lg-10">
                                             <form role="form" onSubmit={event => this.onSubmit(event)}>
 
+                                                {/*BHT*/}
                                                 <div className="form-group">
-                                                    <label>Ward No</label>
-                                                    <input className="form-control"  onChange={event => this.onNameChangeWardNo(event)}/>
+                                                    <label>BHT </label>
+                                                    <input  className="form-control"  onChange={event => this.onNameChangeBHTNumber(event)}/>
 
                                                 </div>
 
 
-                                                <div className="form-group" onChange={event => this.onNameChangeWardType(event)}>
-                                                    <label>Ward Type</label>
-                                                    <select className="form-control">
-                                                        <option>Maternity</option>
-                                                        <option>Pediatric</option>
+                                                {/*WardNo*/}
+                                                <div className="form-group">
+                                                    <label>Ward Number</label>
+                                                    <input className="form-control"  onChange={event => this.onNameChangewardNumber(event)}/>
 
-                                                    </select>
+                                                </div>
+
+                                                {/*bedNumber*/}
+                                                <div className="form-group">
+                                                    <label>BedNumber</label>
+                                                    <input className="form-control"  onChange={event => this.onNameChangebedNumber(event)}/>
+
                                                 </div>
 
 
-
-
-
+                                                {/*patientId*/}
                                                 <div className="form-group">
-                                                    <label>No Of Beds</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeNoOfBeds(event)}/>
+                                                    <label>Patient ID </label>
+                                                    <input className="form-control"  onChange={event => this.onNameChangepatientId(event)}/>
 
                                                 </div>
+
+
+                                                {/*patientName*/}
                                                 <div className="form-group">
-                                                    <label>Available Beds</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeAvailableBeds(event)}/>
+                                                    <label>patient Name</label>
+                                                    <input className="form-control" onChange={event => this.onNameChangepatientName(event)}/>
 
                                                 </div>
+
+                                                {/*admittedDate*/}
                                                 <div className="form-group">
-                                                    <label>Location</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeLocation(event)}/>
+                                                    <label >Admitted Date </label>
+
+                                                    <input value={date} className="form-control" onChange={event => this.onNameChangeadmittedDate(event)}/>
 
                                                 </div>
+
+
+                                                {/*admittedTime*/}
                                                 <div className="form-group">
-                                                    <label>Visiting Hours</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeVisitingTimes(event)}/>
+                                                    <label>Admitted Time  </label>
+                                                    <input value={time} className="form-control" onChange={event => this.onNameChangeadmittedTime(event)}/>
 
                                                 </div>
+
+                                                {/*doctoerIncharge*/}
                                                 <div className="form-group">
-                                                    <label>Incharge</label>
+                                                    <label>Dococtor Incharge</label>
                                                     <input className="form-control" onChange={event => this.onNameChangeIncharge(event)}/>
 
                                                 </div>
+
+                                                {/*patientComplain*/}
                                                 <div className="form-group">
                                                     <label>Phone</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangePhone(event)}/>
-
-                                                </div>
-                                                <div className="form-group">
-                                                    <label>Note</label>
-                                                    <input className="form-control" onChange={event => this.onNameChangeNote(event)}/>
+                                                    <input className="form-control" onChange={event => this.onNameChangepatientComplain(event)}/>
 
                                                 </div>
 
 
+                                                <button type="submit" className="btn btn-info" >Admit Patient</button>
+                                                <button type="reset" className="btn btn-info" >Reset</button>
 
-
-
-                                                <button type="submit" className="btn btn-info" >Add</button>
 
                                             </form>
                                         </div>

@@ -80,7 +80,8 @@ export default class AddWardsBody extends Component{
         event.stopPropagation();
         if (this.wardNo&&this.wardType&&this.noOfBeds&&this.availableBeds&&this.location&&this.visitingTimes&&this.incharge&&this.phone&&this.note) {
             this.props.addWard
-            ({wardNo: this.wardNo,
+            ({
+                wardNo: this.wardNo,
                 wardType: this.wardType,
                 noOfBeds: this.noOfBeds,
                 availableBeds: this.availableBeds,
