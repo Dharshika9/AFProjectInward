@@ -51,10 +51,6 @@ export default class Ward extends Component {
                         <button type="button" className="btn btn-info" onClick={(event)=>{this.click(event)}}>MoreDetails</button>
                         <button type="button" className="btn btn-info">View</button>
 
-
-
-
-
                 </div>
 
 
