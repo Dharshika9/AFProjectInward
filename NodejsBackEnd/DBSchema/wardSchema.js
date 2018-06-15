@@ -7,7 +7,6 @@ const wardSchema = new Schema({
         type: String,
         required: true
     },
-
     wardType: {
         type: String,
         required: true
@@ -24,7 +23,7 @@ const wardSchema = new Schema({
         type: String,
         required: true
     },
-    vistingTimes: {
+    visitingTimes: {
         type: String,
         required: true
     },

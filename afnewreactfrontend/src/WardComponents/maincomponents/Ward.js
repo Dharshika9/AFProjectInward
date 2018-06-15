@@ -16,7 +16,7 @@ export default class Ward extends Component {
     constructor(props) {
         super(props);
         this.ward = this.props.ward;
-        this.getWardDetails = this.props.getWardDetails;
+        this.getWardDetails = this.props.getPatientDetails;
         this.click=this.click.bind(this);
 
     }
@@ -52,15 +52,11 @@ export default class Ward extends Component {
                         <label>Available Beds:{this.ward.availableBeds} </label><br/>
                         <button type="button" className="btn btn-info" onClick={(event)=>{this.click(event)}}>MoreDetails</button>
                         <button type="button" className="btn btn-info">View</button>
+<<<<<<< HEAD
+=======
 
-
-
-
-
+>>>>>>> c44d8406a2963d2410e82af6130aa8625be19a68
                 </div>
-
-
-
             </div>
         </div>
     }

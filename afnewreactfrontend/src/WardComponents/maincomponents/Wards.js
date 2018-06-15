@@ -1,7 +1,7 @@
 'use strict';
 import React, {Component}   from 'react';
-import PropTypes            from 'prop-types';
-import Ward                from './Ward';
+import PropTypes from 'prop-types';
+import Ward from './Ward';
 
 
 class Wards extends Component {
@@ -26,7 +26,7 @@ class Wards extends Component {
             {
 
                 this.wards.map(ward => {
-                    return <Ward key={ward._id || ward.id} ward={ward} getWardDetails={() => this.props.getWardDetails()}/>
+                    return <Ward key={ward._id || ward.id} ward={ward} getWardDetails={() => this.props.getPatientDetails()}/>
                 })
             }
 
