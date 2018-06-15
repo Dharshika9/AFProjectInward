@@ -19,7 +19,7 @@ router.post('/' , function (req , res) {
      req.checkBody('email' , 'email required').notEmpty();
      req.checkBody('email' , 'not valid email').isEmail();
      req.checkBody('password' , 'password required').notEmpty();
-     req.checkBody('password2' , 'password not matched').equals(req.body.password);
+     //req.checkBody('password2' , 'password not matched').equals(req.body.password);
 
 
      var errors = req.validationErrors();

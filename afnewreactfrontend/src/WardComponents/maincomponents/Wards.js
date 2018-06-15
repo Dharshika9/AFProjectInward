@@ -23,10 +23,6 @@ class Wards extends Component {
         this.wards = this.props.wards;
         return <div>
 
-
-
-
-
             {
 
                 this.wards.map(ward => {

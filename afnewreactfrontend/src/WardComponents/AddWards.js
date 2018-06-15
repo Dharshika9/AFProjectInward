@@ -13,7 +13,7 @@ class AddWards extends Component {
 
     }
     addWard(ward) {
-        axios.post("http://localhost:8081" + '/wards', {
+        axios.post("http://localhost:8081" + '/wards/', {
             wardNo: ward.wardNo,
             wardType: ward.wardType,
             noOfBeds: ward.noOfBeds,

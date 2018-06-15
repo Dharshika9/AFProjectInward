@@ -6,34 +6,29 @@ export default class WardNavigation extends Component{
 
     render(){
         return<nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-            <a className="navbar-brand" href="index.html">Start Bootstrap</a>
+            <a className="navbar-brand" href="index.html">Bed Management</a>
             <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                        <a className="nav-link" href="index.html">
-                            <i className="fa fa-fw fa-dashboard"></i>
-                            <span className="nav-link-text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                        <a className="nav-link" href="charts.html">
+
+                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="View Wards Details">
+                        <a className="nav-link" href="http://localhost:3000/viewwards">
                             <i className="fa fa-fw fa-area-chart"></i>
-                            <span className="nav-link-text">Charts</span>
+                            <span className="nav-link-text">View Bed Details</span>
                         </a>
                     </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                        <a className="nav-link" href="tables.html">
+                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Ward Addmisssion">
+                        <a className="nav-link" href="http://localhost:3000/regPatient">
                             <i className="fa fa-fw fa-table"></i>
-                            <span className="nav-link-text">Tables</span>
+                            <span className="nav-link-text">Register Patients</span>
                         </a>
                     </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                        <a className="nav-link" href="#">
+                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="LinkManage wards">
+                        <a className="nav-link" href="http://localhost:3000/manageward">
                             <i className="fa fa-fw fa-link"></i>
-                            <span className="nav-link-text">Link</span>
+                            <span className="nav-link-text">Admit patients</span>
                         </a>
                     </li>
                 </ul>

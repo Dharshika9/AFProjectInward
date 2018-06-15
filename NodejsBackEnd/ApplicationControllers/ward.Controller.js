@@ -10,7 +10,7 @@ var wardController = function() {
                 noOfBeds :wardInstance.noOfBeds,
                 availableBeds: wardInstance.availableBeds,
                 location:wardInstance.location,
-                vistingTimes:wardInstance. vistingTimes,
+                visitingTimes:wardInstance. visitingTimes,
                 incharge:wardInstance.incharge,
                 phone:wardInstance.phone,
                 note:wardInstance.note
