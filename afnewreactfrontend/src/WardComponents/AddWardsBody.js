@@ -94,9 +94,15 @@ export default class AddWardsBody extends Component{
 
 
         if (this.wardNo&&this.wardType&&this.noOfBeds&&this.availableBeds&&this.location&&this.visitingTimes&&this.incharge&&this.phone&&this.note) {
+<<<<<<< HEAD
+            this.props.addWard
+            ({
+                wardNo: this.wardNo,
+=======
 
             this.props.addWard(
                 {wardNo: this.wardNo,
+>>>>>>> 46f44ca2a8ea884ec215af73493a15bacab3eeb5
                 wardType: this.wardType,
                 noOfBeds: this.noOfBeds,
                 availableBeds: this.availableBeds,

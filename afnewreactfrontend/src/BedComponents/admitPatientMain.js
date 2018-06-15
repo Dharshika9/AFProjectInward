@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import BedNavigation from './BedNavigation';
-import regPatient from './regPatientBody';
+import admitPatient from './admitPatientBody';
 
-class regMainPatient extends Component {
+class admitPatientMain extends Component {
 
     render() {
         return<div>
             <BedNavigation/>
-            <regPatient/>
+            <admitPatient/>
         </div>
     }
 }
-export default regMainPatient;
+export default admitPatientMain;

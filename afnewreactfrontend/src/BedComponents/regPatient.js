@@ -25,7 +25,7 @@ class regPatient extends Component {
             patientAddress: patient.patientAddress
         }).then(result => {
             if(result.status == 200) {
-                console.log("SuccessFully Added!");
+                console.log("Patient SuccessFully registered!");
             }
         }).catch(err => {
             alert(err);
@@ -39,6 +39,7 @@ class regPatient extends Component {
     render() {
         return<div>
             <h2>This is main</h2>
+            <BedNavigation/>
             <regPatientBody regPatient={patient => this.regPatient(patient)}/>
         </div>
     }

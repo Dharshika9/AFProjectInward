@@ -5,7 +5,7 @@ import SearchManageWard from "./SearchManageWard";
 export default class ManageWardsBody extends Component{
 
     constructor(props){
-        super(props);
+  -      super(props);
         this.state={
             ward :[]
 
@@ -13,6 +13,7 @@ export default class ManageWardsBody extends Component{
         this.getSpecificWard=this.getSpecificWard.bind(this);
 
     }
+
 
     getSpecificWard=function(event){
         event.preventDefault();
@@ -34,6 +35,10 @@ export default class ManageWardsBody extends Component{
     }
 
 
+<<<<<<< HEAD
+
+
+=======
     delete(wardNo) {
         console.log(wardNo);
         axios.delete('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(results => {
@@ -42,6 +47,7 @@ export default class ManageWardsBody extends Component{
             }
         })
     }
+>>>>>>> 46f44ca2a8ea884ec215af73493a15bacab3eeb5
 
     render(){
 

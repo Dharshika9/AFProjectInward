@@ -7,7 +7,6 @@ const wardSchema = new Schema({
         type: String,
         required: true
     },
-
     wardType: {
         type: String,
         required: true

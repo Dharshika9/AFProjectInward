@@ -13,10 +13,10 @@ export default class WardNavigation extends Component{
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
 
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="View Wards Details">
-                        <a className="nav-link" href="http://localhost:3000/viewwards">
+                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="View Bed Details">
+                        <a className="nav-link" href="http://localhost:3000/viewBeds">
                             <i className="fa fa-fw fa-area-chart"></i>
-                            <span className="nav-link-text">View Bed Details</span>
+                            <span className="nav-link-text">Patients' Bed Details</span>
                         </a>
                     </li>
                     <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Ward Addmisssion">
@@ -25,8 +25,8 @@ export default class WardNavigation extends Component{
                             <span className="nav-link-text">Register Patients</span>
                         </a>
                     </li>
-                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="LinkManage wards">
-                        <a className="nav-link" href="http://localhost:3000/manageward">
+                    <li className="nav-item" data-toggle="tooltip" data-placement="right" title="view wards">
+                        <a className="nav-link" href="http://localhost:3000/viewwards">
                             <i className="fa fa-fw fa-link"></i>
                             <span className="nav-link-text">Admit patients</span>
                         </a>

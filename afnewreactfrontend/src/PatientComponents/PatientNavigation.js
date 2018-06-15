@@ -21,8 +21,13 @@ export default class PatientNavigation extends Component{
                     </li>
                     <li className="nav-item" data-toggle="tooltip" data-placement="right" title="Ward Addmisssion">
                         <a className="nav-link" href="http://localhost:3000/addwards">
+<<<<<<< HEAD
                             <i className="fa fa-fw fa-table"/>
                             <span className="nav-link-text">Lobority tests</span>
+=======
+                            <i className="fa fa-fw fa-table"></i>
+                            <span className="nav-link-text">laboratory tests</span>
+>>>>>>> 7d2e7f0e2de9f7b60f9af0f68dc37e665e0b9837
                         </a>
                     </li>
                     <li className="nav-item" data-toggle="tooltip" data-placement="right" title="LinkManage wards">

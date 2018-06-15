@@ -1,13 +1,13 @@
 'use strict';
 import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
-import Bed                from './Bed';
+import Test                from './Test';
 
-class Beds extends Component{
 
+class Tests extends Component {
     static get propTypes() {
         return {
-            beds: PropTypes.array
+            test: PropTypes.array
         }
     }
 
@@ -19,18 +19,22 @@ class Beds extends Component{
         this.setState(props)
     }
 
-    render(){this.beds = this.props.beds;
+    render() {
+        this.test = this.props.test;
         return <div>
+
+
+
+
 
             {
 
-                this.beds.map(bed => {
-                    return <Bed key={bed._id || bed.id} bed={bed} getBedDetails={() => this.props.getBedDetails()}/>
+                this.test.map(test => {
+                    return <Test key={test._id || test.id} test={test} getTestDetails={() => this.props.getTestDetails()}/>
                 })
             }
 
         </div>;
     }
 }
-
-export default Beds;
+export default Tests

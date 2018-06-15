@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 
 import axios from 'axios';
-import Wards				from './maincomponents/Wards';
+import Wards from './maincomponents/Wards';
 
 export default class ViewWardsBody extends Component{
 

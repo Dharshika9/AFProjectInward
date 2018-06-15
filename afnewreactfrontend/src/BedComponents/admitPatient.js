@@ -8,10 +8,23 @@ export default class admitPatient extends Component{
     constructor(props) {
         super(props);
         this.state = {
-            patientAdmission: []
+            patientAdmission: [],
+            wardDetails:Object
         }
+        this.getWardDetails()
 
     }
+
+
+    getWardDetails(wardNo){
+
+        axios.get("http://localhost:8081"+'/wards',wardNo).then(res =>{
+            this.setState.wardDetails(res.data)
+            // wardDetails(res.data.data||res.data)
+
+        }).catch()
+    }
+
 
     admitPatient(patientAdmission) {
         axios.post("http://localhost:8081" + '/wards', {
@@ -32,6 +45,8 @@ export default class admitPatient extends Component{
             alert(err);
         })
     }
+
+
 
     render() {
         return<div>

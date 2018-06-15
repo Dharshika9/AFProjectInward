@@ -32,7 +32,7 @@ export  default class Bed extends Component{
         var textAlign={textAlign: "center"}
 
         return <div>
-                <div className="container">
+
 
                     <div className="card bg-light mb-3" style={style}>
                         <div className="card-header" style={textAlign}>Bed No - {this.bed.bedNumber}</div>
@@ -42,14 +42,14 @@ export  default class Bed extends Component{
                             <label>Patient Name:{this.bed.patientName} </label><br/>
                             <label>Admitted Date:{this.bed.admittedDate} </label><br/>
                             <label>Admitted Time:{this.bed.admittedTime} </label><br/>
-                            {/*<button type="button" className="btn btn-info" onClick={(event)=>{this.click(event)}}>MoreDetails</button>*/}
+                            {/*<button type="button" className="btn btn-info" onClick={(event)=>{this.click(event)}}>ViewMore</button>*/}
                             <button type="button" className="btn btn-info">BHT</button>
-                            {/*BHT container*/}
+                            {/*BHT */}
 
 
                         </div>
                     </div>
-                </div>
+
             </div>
 
     }
