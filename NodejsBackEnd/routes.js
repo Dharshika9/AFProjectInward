@@ -9,6 +9,8 @@ const patientRegRoute = require('./ApplicationRoutes/patientReg.routes');
 const userRoute = require('./ApplicationRoutes/user.routes');
 const loginRoute = require('./ApplicationRoutes/login.routes');
 const laborityTestRoute = require('./ApplicationRoutes/laborityTest.routes');
+const MedicineRoute = require('./ApplicationRoutes/Medicine.routes');
+
 
 
 
@@ -18,7 +20,7 @@ router.use('/admission/',wardAdmissionRoute);
 router.use('/register',patientRegRoute);
 
 router.use('/user/' , userRoute);
-
+router.use('/medicine/' , MedicineRoute);
 router.use('/login/' , loginRoute);
 router.use('/Test/',laborityTestRoute);
 

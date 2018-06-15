@@ -7,7 +7,7 @@ import Test                from './Test';
 class Tests extends Component {
     static get propTypes() {
         return {
-            wards: PropTypes.array
+            test: PropTypes.array
         }
     }
 

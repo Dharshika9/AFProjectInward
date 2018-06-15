@@ -14,7 +14,7 @@ export default class Ward extends Component {
     constructor(props) {
         super(props);
         this.ward = this.props.ward;
-        this.getWardDetails = this.props.getWardDetails;
+        this.getWardDetails = this.props.getPatientDetails;
         this.click=this.click.bind(this);
 
     }
