@@ -27,21 +27,28 @@ const Controller = function () {
 
     }
 
-    this.getuserByuserName = function (data , callback) {
+    this.getuserByuserName = function (data) {
+        return new Promise((resolve , reject) =>{
+            userSchema.findOne({userName: data}).exec().then(data =>{
 
-            userSchema.findOne({username: data} , callback);
-    }
-
-    this.comparePassword = function (canpassword , hash , callback) {
-        bcrypt.compare(canpassword , hash , function (err , isMatch) {
-            if(err) throw err;
-            callback(null , isMatch);
+                resolve({status: 200 , data: data})
+            }).catch(err =>{
+                reject({status: 400 , data:'Invalid User'})
+            })
         })
     }
 
-    this.getUserById = function (id , callback) {
-        userSchema.findOne({_id:id} , callback);
+    this.comparePassword = function (canpassword , hash ) {
+        return new Promise((resolve ,reject) =>{
+            bcrypt.compare(canpassword , hash).then(data =>{
+                resolve({status:200 ,isMatch: data});
+            }).catch(err =>{
+                reject({status: 400 , data: 'Invalid Password'})
+            })
+
+        })
     }
+
 }
 
 module.exports = new Controller();

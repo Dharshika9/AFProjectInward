@@ -3,11 +3,17 @@ import WardNavigation from './WardNavigation';
 import ViewWardsBody from './ViewWardsBody';
 
 class ViewWards extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            username : this.props.location.state.referrer.username
+        }
+    }
 
     render() {
         return<div>
-            <WardNavigation/>
-            {console.log(this.props.location.state.referrer)}
+            <WardNavigation username = {this.state.username}/>
             <ViewWardsBody/>
         </div>
     }

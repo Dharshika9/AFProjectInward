@@ -1,5 +1,7 @@
 import React , {Component} from 'react'
 import PropTypes 			from "prop-types";
+import axios from 'axios';
+import API from '../static.Config';
 
 import {Redirect} from 'react-router-dom';
 
@@ -21,11 +23,11 @@ export default class Loginform extends Component{
         }
     }
 
-    onChangeEmail(event){
+    onChangeUsername(event){
         event.preventDefault();
         event.stopPropagation();
-        this.email = event.target.value;
-        console.log(this.email);
+        this.userName = event.target.value;
+        console.log(this.userName);
     }
 
     onChangePassword(event){
@@ -38,8 +40,20 @@ export default class Loginform extends Component{
     onSubmit(event){
         event.preventDefault();
         event.stopPropagation();
-        this.setState({username:'ravindu'});
-        this.setState({access: true});
+        axios.post(API.nodeAPI+'/login/' , {username : this.userName , password: this.password}).then(result =>{
+            if(result){
+                this.setState({username: this.userName});
+                this.setState({access: true});
+
+            }else{
+                alert('Invalid Password !');
+            }
+        }).catch(err =>{
+            alert('Some thing went wrong :)');
+        })
+
+
+
 
     }
 
@@ -48,7 +62,7 @@ export default class Loginform extends Component{
         if(this.state.access){
             return <Redirect to={{
                 pathname: '/viewwards',
-                state: { referrer: this.state.username }
+                state: { referrer: { username:this.state.username} }
             }}/>
         }
 
@@ -58,9 +72,9 @@ export default class Loginform extends Component{
                 <div className="card-body">
                     <form onSubmit={event => {this.onSubmit(event)}}>
                         <div className="form-group">
-                            <label htmlFor="exampleInputEmail1">Email address</label>
-                            <input className="form-control" id="exampleInputEmail1" type="email"
-                                   aria-describedby="emailHelp" placeholder="Enter email" onChange={(event) => this.onChangeEmail(event)}/>
+                            <label htmlFor="exampleInputEmail1">User Name</label>
+                            <input className="form-control" id="exampleInputPassword1" type="text"
+                                   placeholder="Password" onChange={(event) => this.onChangeUsername(event)}/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Password</label>

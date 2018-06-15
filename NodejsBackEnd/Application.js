@@ -11,7 +11,13 @@ var app = express();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(expressValidator());
+app.use(expressValidator({
+    customValidators: {
+        isEqual: (value1, value2) => {
+            return value1 === value2
+        }
+    }
+}));
 app.use(cookieParser());
 
 app.use('/' , router);

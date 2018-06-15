@@ -2,47 +2,44 @@
 
 const express = require('express');
 const router =  express.Router();
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
 const Controller = require('../ApplicationControllers/userController');
 
 
 
-passport.use(new LocalStrategy(
+/*passport.use(new LocalStrategy(
     function(username, password, done) {
-        Controller.getuserByuserName(username , function (err , user) {
-            if (err) throw err;
-            if (!user) {
-                return done(null, false, {message: 'Unknown User'});
-            }
-            console.log("done2")
-
-
-            Controller.comparePassword(password, user.password, function (err, isMatch) {
-                if (err) throw err;
-                if (isMatch) {
-                    return done(null, user);
-                } else {
+        console.log('called'+username);
+        Controller.getuserByuserName(username).then(data =>{
+            Controller.comparePassword(password , data.password).then(status=>{
+                if(status){
+                    return done(null, data);
+                }
+                else{
                     return done(null, false, {message: 'invalid password'});
                 }
-            });
-        });
-    }));
 
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
+            }).catch(err =>{
+                return err
+            })
+        }).catch(err =>{
+            return err;
+        })
 
-passport.deserializeUser(function(id, done) {
-    Controller.getUserById(id, function(err, user) {
-        done(err, user);
-    });
-});
+ }));*/
 
-router.post('/', passport.authenticate('local'), function(req, res) {
-        res.status(200).send({message:'logged in'});
+router.post('/',(req, res) =>{
+    Controller.getuserByuserName(req.body.username).then(data =>{
+        console.log(data.data.password)
+        Controller.comparePassword(req.body.password , data.data.password).then(data=>{
+            res.status(data.status).send(data.isMatch);
+        }).catch(err=>{
+            res.status(err.status).send(err.data);
+        })
+    }).catch(err=>{
+        res.status(err.status).send(err.data);
+    })
 
-});
+})
 
 
 module.exports = router;

@@ -8,7 +8,8 @@ class AddWards extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            wards: []
+            wards: [],
+            username : this.props.location.state.referrer.username
         }
 
     }
@@ -42,7 +43,7 @@ class AddWards extends Component {
 
     render() {
         return<div>
-            <WardNavigation/>
+            <WardNavigation username = {this.state.username}/>
             <AddWardsBody addWard={ward => this.addWard(ward)}/>
         </div>
     }

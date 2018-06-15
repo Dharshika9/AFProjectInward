@@ -87,5 +87,12 @@
 /*}*/
 
 .ward-main{
-    width: 400px
+    width: 400px;
+
+}
+
+.newNav{
+    padding-top: 5px;
+    text-decoration-color: #1ab7ea;
+    font-size: larger;
 }

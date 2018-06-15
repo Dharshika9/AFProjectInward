@@ -34,7 +34,7 @@ class App extends Component {
                 <Route path="/BedMainPage" component={BedMainpage}/>
                 <Route path="/regPatient" component={regMainPatient}/>
                 <Route path="/admitPatient" component={admitPatient}/>
-
+                <Route path="/patientMainpage" component={PatientMainpage}/>
 
             </div>
         </BrowserRouter>

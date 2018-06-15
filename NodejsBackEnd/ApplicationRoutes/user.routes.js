@@ -11,15 +11,16 @@ router.post('/' , function (req , res) {
     let password = req.body.password;
     let password2 = req.body.confpassword;
 
-    console.log(password);
-    console.log(password2);
+    if(password===password2){
+        console.log('all are good')
+    }
 
      req.checkBody('name' , 'name required').notEmpty();
      req.checkBody('username' , 'username required').notEmpty();
      req.checkBody('email' , 'email required').notEmpty();
      req.checkBody('email' , 'not valid email').isEmail();
      req.checkBody('password' , 'password required').notEmpty();
-     //req.checkBody('password2' , 'password not matched').equals(req.body.password);
+
 
 
      var errors = req.validationErrors();
