@@ -27,17 +27,11 @@ class AddWards extends Component {
             if(result.status == 200) {
                 alert("Ward SuccessFully Added!");
 
-
-
-
             }
         }).catch(err => {
             alert(err);
         })
     }
-
-
-
 
 
     render() {

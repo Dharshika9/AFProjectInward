@@ -110,4 +110,12 @@ router.delete('/delete_specific_ward/:id', (req, res) => {
     })
 })
 
+router.put('/update_specific_ward/:id', (req, res) => {
+    controller.updateSpecificWard(req.params.id).then(response => {
+        res.status(response.status).send(response);
+    }).catch(err => {
+        res.status(err.status).send(err.message);
+    })
+})
+
 module.exports = router;

@@ -2,18 +2,15 @@ import React , {Component} from 'react';
 import axios                from 'axios';
 import FormManageWard from "./FormManageWard";
 
-
-
 export default class SearchManageWard extends Component {
-
 
 
     constructor(props) {
         super(props);
-        this.state={
-            ward :{}
+        this.state= {
+            ward: []
+        }
 
-        };
         this.getSpecificWard=this.getSpecificWard.bind(this);
 
     }
@@ -21,21 +18,23 @@ export default class SearchManageWard extends Component {
 
     getSpecificWard=function(event){
         event.preventDefault();
+        event.stopPropagation();
         const wardNo=event.target.elements.wardNo.value;
         axios.get('http://localhost:8081/wards/get_specific_ward/'+wardNo).then(res =>{
-
             this.setState({
-                ward:res.data
+                ward:res.data[0]
             })
 
             console.log(this.state.ward);
 
-        }).then();
+        }).catch((err)=>{
+            console.log(err);
+        });
 
     }
-
-
-
+    // componentWillReceiveProps(props){
+    //    this.setState(props);
+    // }
 
     render() {
         var style={width: 300}
@@ -55,16 +54,14 @@ export default class SearchManageWard extends Component {
                                     <div className="ward-main ">
 
 
+                                        <form onSubmit={event => this.getSpecificWard(event)} role="form">
+                                            <div className="form-group">
+                                                <label>Enter Ward No : </label>
+                                                <input className="form-control-new" placeholder="Enter text" name="wardNo"/>
+                                            </div>
+                                            <button type="submit" className="btn btn-info">View Details</button>
 
-                                        <div className="input-group">
-                                            <label>Enter Ward No</label>
-                                            <input type="text" className="form-control"
-                                                   placeholder="Search for..." name="wardNo"/>
-
-                                            <span className="input-group-btn">
-                                            <button className="btn btn-secondary" type="button" onSubmit={event => this.getSpecificWard(event)}>Go!</button>
-                                            </span>
-                                        </div>
+                                        </form>
 
                                      </div>
                                 </div>

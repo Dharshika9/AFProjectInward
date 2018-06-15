@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import PropTypes 			from "prop-types";
+import ManageBed from "./ManageBed";
 
 export default class AddWardsBody extends Component{
 
@@ -201,6 +202,7 @@ export default class AddWardsBody extends Component{
 
 
                                             </form>
+                                                <ManageBed/>
                                         </div>
 
                                     </div>

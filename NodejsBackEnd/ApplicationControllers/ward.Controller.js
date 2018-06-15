@@ -84,6 +84,16 @@ var wardController = function() {
         })
     }
 
+    this.updateSpecificWard = function(id, updateData) {
+        return new Promise((resolve, reject) => {
+            wardSchema.update({wardNo: id}, updateData).then(() => {
+                resolve({'status': 200, 'message':'Update ward'});
+            }).catch(err => {
+                reject({'status': 404, 'message':'err:-'+err});
+            })
+        })
+    }
+
 }
 
 module.exports = new wardController();
