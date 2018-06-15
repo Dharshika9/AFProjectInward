@@ -24,7 +24,7 @@ const wardSchema = new Schema({
         type: String,
         required: true
     },
-    vistingTimes: {
+    visitingTimes: {
         type: String,
         required: true
     },
