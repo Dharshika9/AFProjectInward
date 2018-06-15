@@ -87,6 +87,7 @@
 /*}*/
 
 .ward-main{
+
     width: 400px;
 
 }
@@ -96,3 +97,16 @@
     text-decoration-color: #1ab7ea;
     font-size: larger;
 }
+.primary-new {
+
+    float: left;
+
+    width: 500px;
+
+}
+.content-new {
+    float: left;
+
+    width: 500px;
+}
+

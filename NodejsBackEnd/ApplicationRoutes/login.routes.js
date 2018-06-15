@@ -29,7 +29,7 @@ const Controller = require('../ApplicationControllers/userController');
 
 router.post('/',(req, res) =>{
     Controller.getuserByuserName(req.body.username).then(data =>{
-        console.log(data.data.password)
+
         Controller.comparePassword(req.body.password , data.data.password).then(data=>{
             res.status(data.status).send(data.isMatch);
         }).catch(err=>{

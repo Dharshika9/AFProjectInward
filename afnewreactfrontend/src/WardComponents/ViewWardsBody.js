@@ -12,6 +12,8 @@ export default class ViewWardsBody extends Component{
             wards: []
         }
         this.getWardDetails();
+
+
     }
     getWardDetails() {
         axios.get("http://localhost:8081" + '/wards').then(res => {
@@ -24,9 +26,10 @@ export default class ViewWardsBody extends Component{
 
 
     render(){
+
         return <div className="content-wrapper">
             <div className="container-fluid">
-                <Wards wards={this.state.wards} getWardDetails = {() => this.getWardDetails()}/>
+                <Wards username ={this.props.username} wards={this.state.wards} getWardDetails = {() => this.getWardDetails()}/>
 
             </div>
         </div>

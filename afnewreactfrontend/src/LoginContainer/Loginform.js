@@ -41,7 +41,8 @@ export default class Loginform extends Component{
         event.preventDefault();
         event.stopPropagation();
         axios.post(API.nodeAPI+'/login/' , {username : this.userName , password: this.password}).then(result =>{
-            if(result){
+
+            if(result.data){
                 this.setState({username: this.userName});
                 this.setState({access: true});
 
@@ -74,7 +75,7 @@ export default class Loginform extends Component{
                         <div className="form-group">
                             <label htmlFor="exampleInputEmail1">User Name</label>
                             <input className="form-control" id="exampleInputPassword1" type="text"
-                                   placeholder="Password" onChange={(event) => this.onChangeUsername(event)}/>
+                                   placeholder="User Name" onChange={(event) => this.onChangeUsername(event)}/>
                         </div>
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Password</label>

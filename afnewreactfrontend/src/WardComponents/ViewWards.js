@@ -14,7 +14,7 @@ class ViewWards extends Component {
     render() {
         return<div>
             <WardNavigation username = {this.state.username}/>
-            <ViewWardsBody/>
+            <ViewWardsBody username ={this.state.username}/>
         </div>
     }
 }

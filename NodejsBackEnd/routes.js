@@ -5,14 +5,11 @@ const router = express.Router();
 
 const wardRoute = require('./ApplicationRoutes/ward.routes');
 
-
-
 const wardAdmissionRoute = require('./ApplicationRoutes/patientWardAdmission.routes');
 const patientRegRoute = require('./ApplicationRoutes/patientReg.routes');
 const userRoute = require('./ApplicationRoutes/user.routes');
 const loginRoute = require('./ApplicationRoutes/login.routes');
-const patientRoutes = require('./ApplicationRoutes/patient.routes');
-
+const patientRoutes = require('./ApplicationRoutes/patient.routes')
 
 
 router.use('/wards/' , wardRoute);

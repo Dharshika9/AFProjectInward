@@ -26,7 +26,7 @@ class Wards extends Component {
             {
 
                 this.wards.map(ward => {
-                    return <Ward key={ward._id || ward.id} ward={ward} getWardDetails={() => this.props.getWardDetails()}/>
+                    return <Ward username={this.props.username} key={ward._id || ward.id} ward={ward} getWardDetails={() => this.props.getWardDetails()}/>
                 })
             }
 

@@ -10,7 +10,7 @@ var wardController = function() {
                 noOfBeds :wardInstance.noOfBeds,
                 availableBeds: wardInstance.availableBeds,
                 location:wardInstance.location,
-                vistingTimes:wardInstance. vistingTimes,
+                visitingTimes:wardInstance. visitingTimes,
                 incharge:wardInstance.incharge,
                 phone:wardInstance.phone,
                 note:wardInstance.note
@@ -78,6 +78,16 @@ var wardController = function() {
         return new Promise((resolve, reject) => {
             wardSchema.remove({wardNo: id}).then(() => {
                 resolve({'status': 200, 'message':'Delete ward'});
+            }).catch(err => {
+                reject({'status': 404, 'message':'err:-'+err});
+            })
+        })
+    }
+
+    this.updateSpecificWard = function(id, updateData) {
+        return new Promise((resolve, reject) => {
+            wardSchema.update({wardNo: id}, updateData).then(() => {
+                resolve({'status': 200, 'message':'Update ward'});
             }).catch(err => {
                 reject({'status': 404, 'message':'err:-'+err});
             })

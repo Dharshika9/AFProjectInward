@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import axios                from 'axios';
-import events from 'events';
+import SearchManageWard from "./SearchManageWard";
 
 export default class ManageWardsBody extends Component{
 
@@ -27,23 +27,12 @@ export default class ManageWardsBody extends Component{
             console.log(this.state.ward);
 
 
-        }).then();
+        }).catch(err =>{
+            alert('Invalid Ward ID !');
+        })
 
     }
 
-    deleteSpecificWard=function(event){
-        event.preventDefault();
-        const wardNo=event.target.elements.wardNo.value;
-        axios.get('http://localhost:8081/wards/delete_specific_ward/'+wardNo).then(res =>{
-
-
-            if(res.status == 200) {
-                alert("Ward SuccessFully Deleted!");
-
-            }
-        });
-
-    }
 
     delete(wardNo) {
         console.log(wardNo);
@@ -57,12 +46,10 @@ export default class ManageWardsBody extends Component{
     render(){
 
 
-        var style={width: 300}
-        var textAlign={textAlign: "center"}
         return <div className="content-wrapper">
-            <div className="container-fluid">
+                    <div className="container-fluid">
 
-                    <div className="container-new ">
+                        <div className="container-new ">
 
                         <div className="panel-body">
                             <form onSubmit={event => this.getSpecificWard(event)} role="form">
@@ -77,18 +64,18 @@ export default class ManageWardsBody extends Component{
                             <div className="table-responsive">
                                 <table className="table">
                                     <thead>
-                                    <tr>
-                                        <th>Ward No</th>
-                                        <th>Ward Type</th>
-                                        <th>No Of Beds</th>
-                                        <th>Available Beds</th>
-                                        <th>Location</th>
-                                        <th>Visiting Hours</th>
-                                        <th>Incharge</th>
-                                        <th>Phone</th>
-                                        <th>Note</th>
-                                        <th>Delete</th>
-                                    </tr>
+                                        <tr>
+                                            <th>Ward No</th>
+                                            <th>Ward Type</th>
+                                            <th>No Of Beds</th>
+                                            <th>Available Beds</th>
+                                            <th>Location</th>
+                                            <th>Visiting Hours</th>
+                                            <th>Incharge</th>
+                                            <th>Phone</th>
+                                            <th>Note</th>
+                                            <th>Delete</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                     {
@@ -112,108 +99,12 @@ export default class ManageWardsBody extends Component{
 
                         </div>
 
-                        <div className="row">
-                            <div className="col-lg-4">
-                                <div className="panel panel-default">
-                                    <div className="panel-heading" style={textAlign}>
-                                        Manage Wards
-                                    </div>
-                                    <div className="panel-body">
-                                        <div className="row">
-                                            <div className="col-lg-10">
-                                                <div className="ward-main ">
-                                                <form role="form" >
+                         <SearchManageWard/>
 
 
-                                                    <div className="input-group">
-                                                        <label>Enter Ward No</label>
-                                                        <input type="text" className="form-control"
-                                                               placeholder="Search for..." name="wardNo"/>
+                        </div>
 
-                                                        <span className="input-group-btn">
-                                                        <button className="btn btn-secondary" type="button" onSubmit={event => this.getSpecificWard(event)}>Go!</button>
-                                                        </span>
-                                                    </div>
-
-
-                                                    <div className="form-group">
-                                                        <label>Ward No</label>
-                                                        <input className="form-control"  />
-
-                                                    </div>
-
-
-                                                    <div className="form-group">
-                                                        <label>Ward Type</label>
-                                                        <select className="form-control">
-                                                            <option>Maternity</option>
-                                                            <option>Pediatric</option>
-
-                                                        </select>
-                                                    </div>
-
-
-                                                    <div className="form-group">
-                                                        <label>No Of Beds</label>
-                                                        <input className="form-control"/>
-
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label>Available Beds</label>
-                                                        <input className="form-control"/>
-
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label>Location</label>
-                                                        <input className="form-control"/>
-
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label>Visiting Hours</label>
-                                                        <input className="form-control"/>
-
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label>Incharge</label>
-                                                        <input className="form-control"/>
-
-                                                    </div>
-                                                    <div className="form-group">
-                                                        <label>Phone</label>
-                                                        <input className="form-control"/>
-
-                                                    </div>
-
-                                                    <div className="form-group">
-                                                        <label>Note</label>
-                                                        <textarea className="form-control" rows="3" name="note" ></textarea>
-                                                    </div>
-
-                                                    <button type="submit" className="btn btn-info" >Update</button>
-                                                    <button type="submit" className="btn btn-info" >Delete</button>
-                                                    <button type="reset" className="btn btn-info" >Reset</button>
-
-                                                </form>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-
-                </div>
-            </div>
-
-
-
-
-
-            </div>
+                    </div>
         </div>
     }
 }

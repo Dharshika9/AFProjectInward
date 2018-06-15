@@ -1,7 +1,7 @@
 'use strict';
 import React, {Component}   from 'react';
 import PropTypes            from 'prop-types';
-import reactDOM from 'react-dom';
+import {Redirect} from 'react-router-dom';
 
 export default class Ward extends Component {
     static get propTypes() {
@@ -17,18 +17,33 @@ export default class Ward extends Component {
         this.getWardDetails = this.props.getWardDetails;
         this.click=this.click.bind(this);
 
+        this.state = {
+            access : false,
+            username: ''
+        }
+
     }
 
-    click(event) {
+    componentWillReceiveProps(props){
+        this.setState({username:this.props.username});
+    }
+
+    onClick(event) {
         event.preventDefault();
         event.stopPropagation();
 
-
-
+        this.setState({access:true});
 
     }
 
     render() {
+
+        if(this.state.access){
+            return <Redirect to={{
+                pathname: '/viewwards',
+                state: { referrer: { username:this.state.username, wardno : this.ward.wardNo} }
+            }}/>
+        }
 
 
         var style={width: 300, height: 220}
@@ -48,12 +63,7 @@ export default class Ward extends Component {
                         <label>Ward Type:{this.ward.wardType} </label><br/>
                         <label>Number of Beds:{this.ward.noOfBeds} </label><br/>
                         <label>Available Beds:{this.ward.availableBeds} </label><br/>
-                        <button type="button" className="btn btn-info" onClick={(event)=>{this.click(event)}}>MoreDetails</button>
-                        <button type="button" className="btn btn-info">View</button>
-
-
-
-
+                        <button type="button" className="btn btn-info" onClick={event =>{this.onClick(event)}}>View</button>
 
                 </div>
 
