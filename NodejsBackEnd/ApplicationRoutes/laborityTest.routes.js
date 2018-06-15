@@ -45,4 +45,14 @@ router.get('/:id',function (req,res) {
 
 });
 
+router.get('/get_specific_Tests/:id', (req, res) => {        //to get all the test that belongs to specific id
+    controller.getSpecificTests(req.params.id).then(response => {
+        res.status(response.status).send(response.data);
+    }).catch(err => {
+        res.status(err.status).send(err.message);
+    })
+})
+
+
+
 module.exports=router

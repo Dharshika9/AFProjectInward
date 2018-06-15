@@ -1,7 +1,7 @@
 'use strict';
 import React, {Component}   from 'react';
-import PropTypes            from 'prop-types';
-import Ward                from './Ward';
+import PropTypes from 'prop-types';
+import Ward from './Ward';
 
 
 class Wards extends Component {

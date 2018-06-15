@@ -48,15 +48,7 @@ export default class Ward extends Component {
                         <label>Available Beds:{this.ward.availableBeds} </label><br/>
                         <button type="button" className="btn btn-info" onClick={(event)=>{this.click(event)}}>MoreDetails</button>
                         <button type="button" className="btn btn-info">View</button>
-
-
-
-
-
                 </div>
-
-
-
             </div>
         </div>
     }

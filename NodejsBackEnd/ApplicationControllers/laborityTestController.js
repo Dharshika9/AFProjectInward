@@ -5,7 +5,7 @@ var laborityTestController = function () {
     this.addTest=function (patient) {
         return new Promise(function (resolve,reject) {
             var Test=new laborityTestSchema({
-                TestId:Test.TestId,
+                TestId:patient.TestId,
                 patientId:patient.patientId,
                 testType:patient.testType,
                 PatientStatus:patient.PatientStatus,
@@ -53,6 +53,16 @@ var laborityTestController = function () {
         })
     }
 
+    this.getSpecificTests=function(id) {
+        return new Promise((resolve, reject) => {
+            wardSchema.find({patientId: id}).exec().then(data => {
+                resolve({'status': 200, 'message': 'Get data', 'data': data});
+            }).catch(err => {
+                reject({'status': 404, 'message': 'err:-' + err});
+            })
+        })
+    }
+
     this.getOneTest=function (id) {
         return new Promise(function (resolve,reject) {
             laborityTestSchema.find({_id:id}).exec().then(function (data) {
@@ -64,5 +74,7 @@ var laborityTestController = function () {
     }
 
 }
+
+
 
 module.exports=new laborityTestController();
