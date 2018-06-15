@@ -4,10 +4,20 @@ import ViewBedsBody from './viewBedsBody';
 
 class viewBeds extends Component {
 
+    constructor(props){
+        super(props);
+
+        this.state = {
+            username : this.props.location.state.referrer.username,
+            wardno : this.props.location.state.referrer.wardno
+        }
+
+    }
+
     render() {
         return<div>
-            <BedNavigation/>
-            <ViewBedsBody/>
+            <BedNavigation username ={this.state.username} wardno = {this.state.wardno}/>
+            <ViewBedsBody username ={this.state.username} wardno = {this.state.wardno}/>
         </div>
     }
 }

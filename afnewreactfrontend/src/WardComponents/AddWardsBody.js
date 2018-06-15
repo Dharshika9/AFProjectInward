@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import PropTypes 			from "prop-types";
-import ManageBed from "./ManageBed";
+
 
 export default class AddWardsBody extends Component{
 
@@ -82,27 +82,13 @@ export default class AddWardsBody extends Component{
     onSubmit(event) {
         event.preventDefault();
         event.stopPropagation();
-        console.log(this.wardNo);
-        console.log(this.wardType);
-        console.log(this.noOfBeds);
-        console.log(this.availableBeds);
-        console.log(this.location);
-        console.log(this.visitingTimes);
-        console.log(this.incharge);
-        console.log(this.phone);
-        console.log(this.note);
-
 
         if (this.wardNo&&this.wardType&&this.noOfBeds&&this.availableBeds&&this.location&&this.visitingTimes&&this.incharge&&this.phone&&this.note) {
-<<<<<<< HEAD
-            this.props.addWard
-            ({
-                wardNo: this.wardNo,
-=======
+
+
 
             this.props.addWard(
                 {wardNo: this.wardNo,
->>>>>>> 46f44ca2a8ea884ec215af73493a15bacab3eeb5
                 wardType: this.wardType,
                 noOfBeds: this.noOfBeds,
                 availableBeds: this.availableBeds,
@@ -211,7 +197,7 @@ export default class AddWardsBody extends Component{
 
 
                                             </form>
-                                                <ManageBed/>
+
                                         </div>
 
                                     </div>

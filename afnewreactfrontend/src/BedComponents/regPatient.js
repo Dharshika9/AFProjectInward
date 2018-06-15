@@ -3,15 +3,17 @@ import BedNavigation        from './BedNavigation';
 import regPatientBody       from './regPatientBody';
 import axios                from 'axios';
 
-class regPatient extends Component {
-
+export default class RegPatient extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            patient: []
+            patient: [],
+            username : this.props.location.state.referrer.username,
+            wardno :this.props.location.state.referrer.wardno
         }
-
+        console.log(this.props.location.state.referrer)
     }
+
     regPatient(patient) {
         axios.post("http://localhost:8081" + '/admission', {
             patientId: patient.patientId,
@@ -38,10 +40,8 @@ class regPatient extends Component {
 
     render() {
         return<div>
-            <h2>This is main</h2>
-            <BedNavigation/>
+            <BedNavigation username ={this.state.username} wardno = {this.state.wardno}/>
             <regPatientBody regPatient={patient => this.regPatient(patient)}/>
         </div>
     }
 }
-export default  regPatient;

@@ -1,38 +1,52 @@
 import React , {Component} from 'react';
 
 import axios from 'axios';
-import Beds				from './MainComponents/Beds';
+import Beds	from './MainComponents/Beds';
+import PropTypes from "prop-types";
+
+const API = require('../static.Config');
 
 export  default class viewBedsBody extends  Component{
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            beds: []
+        static get propTypes() {
+            return {
+                ward: PropTypes.array,
+                username: PropTypes.string,
+                wardid: PropTypes.string
+            }
         }
-        this.getBedDetails();
-    }
 
-getBedDetails()
-{
-    axios.get("http://localhost:8081" + '/admission').then(res => {
-        this.setState({
-            wards: res.data.data || res.data
-        });
-    })
-}
+        componentWillReceiveProps(props) {
+            this.setState(props)
+        }
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                beds: []
+            }
+            this.getBedDetails(this.props.wardno);
+        }
+
+        getBedDetails(wardno)
+        {
+            axios.get(API.nodeAPI +'/admission/'+wardno).then(res => {
+                this.setState({
+                    beds : res.data.data || res.data
+                });
+            })
+        }
 
 
-render(){
-    return <div className="content-wrapper">
-        <div className="container-fluid">
-            <Beds beds={this.state.beds} getBedDetails = {() => this.getBedDetails()}/>
-            <div className="container">
-                <button type="button" className="btn btn-info" href="/regPatient">Add Patient</button>
+        render(){
+            return <div className="content-wrapper">
+                <div className="container-fluid">
+
+                    <Beds username={this.props.username} wardno ={this.props.wardno} beds={this.state.beds} getBedDetails = {(ward) => this.getBedDetails(ward)}/>
+
+
+                </div>
             </div>
-
-        </div>
-    </div>
-}
+        }
 
 }

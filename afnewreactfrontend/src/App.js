@@ -7,14 +7,13 @@ import {BrowserRouter , Route} from 'react-router-dom';
 import Home from './LoginContainer/Homepage';
 import Login from './LoginContainer/Loginbody';
 import Register from './LoginContainer/RegisterBody';
-import Mainpage from './WardComponents/Mainpage';
 import PatientMainpage from './PatientComponents/PatientMainpage';
 import ViewWards from './WardComponents/ViewWards';
 import AddWards from './WardComponents/AddWards';
 import ManageWards from './WardComponents/ManageWards';
 import BedMainpage from './BedComponents/BedMainPage';
-import regMainPatient from './BedComponents/regMainPatient';
-import admitPatient from './BedComponents/admitPatient'
+import RegPatient from './BedComponents/RegPatient';
+import admitPatient from './BedComponents/AdmitPatient'
 import viewBeds from './BedComponents/viewBeds';
 
 
@@ -27,20 +26,15 @@ class App extends Component {
                 <Route path="/" component={Home} exact/>
                 <Route path="/login" component={Login}/>
                 <Route path="/register" component={Register}/>
-                <Route path="/Mainpage" component={Mainpage}/>
                 <Route path="/PatientMainpage" component={PatientMainpage}/>
                 <Route path="/viewwards" component={ViewWards}/>
                 <Route path="/addwards" component={AddWards}/>
                 <Route path="/manageward" component={ManageWards}/>
                 <Route path="/BedMainPage" component={BedMainpage}/>
-                <Route path="/regPatient" component={regMainPatient}/>
+                <Route path="/regPatient" component={RegPatient}/>
                 <Route path="/admitPatient" component={admitPatient}/>
-<<<<<<< HEAD
-                <Route path="/patientMainpage" component={PatientMainpage}/>
-=======
                 <Route path="/viewBeds" component={viewBeds}/>
 
->>>>>>> 7d2e7f0e2de9f7b60f9af0f68dc37e665e0b9837
 
             </div>
         </BrowserRouter>

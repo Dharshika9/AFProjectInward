@@ -3,19 +3,15 @@ const Schema = mongoose.Schema;
 
 const patientWardAdmissionSchema =new Schema({
     BHTNumber:{
-        type: Number,
+        type: String,
         require:true
     },
     wardNo:{
-        type: Number,
-        require:true
-    },
-    bedNumber:{
         type: String,
         require:true
     },
     patientId:{
-        type: Number,
+        type: String,
         require:true
     },
     patientName:{
@@ -23,10 +19,6 @@ const patientWardAdmissionSchema =new Schema({
         require:true
     },
     admittedDate:{
-        type: String,
-        require:true
-    },
-    admittedTime:{
         type: String,
         require:true
     },
@@ -41,6 +33,6 @@ const patientWardAdmissionSchema =new Schema({
 
 })
 
-mongoose.model('patientWardAdmission',patientWardAdmissionSchema);
+
 
 module.exports = patientWardAdmissionSchema;

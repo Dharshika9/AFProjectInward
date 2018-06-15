@@ -3,13 +3,15 @@ import BedNavigation from './BedNavigation';
 import AdmitPatientBody from './admitPatientBody';
 import axios                from 'axios';
 
-export default class admitPatient extends Component{
+export default class AdmitPatient extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
             patientAdmission: [],
-            wardDetails:Object
+            wardDetails:Object,
+            username : this.props.location.state.referrer.username,
+            wardno :this.props.location.state.referrer.wardno
         }
         this.getWardDetails()
 
@@ -50,7 +52,7 @@ export default class admitPatient extends Component{
 
     render() {
         return<div>
-            <BedNavigation/>
+            <BedNavigation username ={this.state.username} wardno = {this.state.wardno}/>
             <AdmitPatientBody admitPatient={patientAdmission => this.admitPatient(patientAdmission)}/>
         </div>
     }

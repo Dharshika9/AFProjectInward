@@ -7,7 +7,9 @@ class Beds extends Component{
 
     static get propTypes() {
         return {
-            beds: PropTypes.array
+            beds: PropTypes.array,
+            username: PropTypes.string,
+            wardno: PropTypes.string
         }
     }
 
@@ -19,13 +21,19 @@ class Beds extends Component{
         this.setState(props)
     }
 
-    render(){this.beds = this.props.beds;
+    render(){
+
+        this.beds = this.props.beds;
+        this.username = this.props.username;
+        this.wardno = this.props.wardno;
+
         return <div>
 
             {
 
                 this.beds.map(bed => {
-                    return <Bed key={bed._id || bed.id} bed={bed} getBedDetails={() => this.props.getBedDetails()}/>
+
+                    return <Bed username={this.username} wardno = {this.wardno} key={bed._id || bed.id} bed={bed} getBedDetails={(wardno) => this.props.getBedDetails(wardno)}/>
                 })
             }
 
