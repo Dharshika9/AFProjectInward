@@ -4,7 +4,7 @@ var patientRegistrationSchema 	= mongoose.model('patientRegistration');
 var patientRegistrationController = function () {
     this.addPatient=function (patient) {
         return new Promise(function (resolve,reject) {
-            var patient=new patientRegistrationSchema({
+            var patientone=new patientRegistrationSchema({
                 patientId:patient.patientId,
                 patientName:patient.patientName,
                 patientDOB:patient.patientDOB,
@@ -16,10 +16,10 @@ var patientRegistrationController = function () {
                 patientAddress:patient.patientAddress
             })
 
-            patient.save().then(function () {
-                resolve({'status':200,'message':'patient is registered successfully'})
+            patientone.save().then(function () {
+                resolve({status:200,message:'patient is registered successfully'})
             }).catch(function (err) {
-                reject({'status':500,'message':'patient cannot be added'})
+                reject({status:500,message:'patient cannot be added'})
             })
         })
     }
@@ -58,10 +58,11 @@ var patientRegistrationController = function () {
 
     this.getOnePatient=function (id) {
         return new Promise(function (resolve,reject) {
-            patientRegistrationSchema.find({_id:id}).exec().then(function (data) {
-                resolve({'status':200,'message':'Patient','data':data})
+            console.log('i 1 called');
+            patientRegistrationSchema.findOne({patientId:id}).exec().then(function (data) {
+                resolve({status:200, data:data})
             }).catch(function (err) {
-                reject({'status':404,'meassage':'patient not fount' + err})
+                reject({status:404,meassage :'patient not fount'})
             })
         })
     }

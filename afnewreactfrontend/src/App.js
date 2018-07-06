@@ -15,6 +15,11 @@ import BedMainpage from './BedComponents/BedMainPage';
 import RegPatient from './BedComponents/RegPatient';
 import admitPatient from './BedComponents/AdmitPatient'
 import viewBeds from './BedComponents/viewBeds';
+import Tests from './PatientComponents/ViewTests';
+import Medicine from './PatientComponents/ViewMedicine';
+import Transfer from './PatientComponents/PatienttransferBody';
+import Discharge from './PatientComponents/PatientdischargeBody';
+import Notes from './PatientComponents/PatientnotesBody';
 
 
 
@@ -34,6 +39,11 @@ class App extends Component {
                 <Route path="/regPatient" component={RegPatient}/>
                 <Route path="/admitPatient" component={admitPatient}/>
                 <Route path="/viewBeds" component={viewBeds}/>
+                <Route path="/tests" component={Tests}/>
+                <Route path="/medicines" component={Medicine}/>
+                <Route path="/transfer" component={Transfer}/>
+                <Route path="/discharge" component={Discharge}/>
+                <Route path="/notes" component={Notes}/>
 
 
             </div>

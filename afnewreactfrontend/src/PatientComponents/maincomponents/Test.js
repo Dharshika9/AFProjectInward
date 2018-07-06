@@ -7,7 +7,10 @@ export default class  Test extends Component {
     static get propTypes() {
         return {
             test: PropTypes.object,
-            getTestDetails: PropTypes.func
+            getTestDetails: PropTypes.func,
+            username: PropTypes.string,
+            wardno: PropTypes.string,
+            patientno : PropTypes.string
         }
     }
 
@@ -15,21 +18,20 @@ export default class  Test extends Component {
         super(props);
         this.test = this.props.test;
         this.getTestDetails = this.props.getTestDetails;
-        this.click=this.click.bind(this);
-
-    }
-
-    click(event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-
 
 
     }
+
+    componentWillReceiveProps(props){
+        this.setState(props);
+    }
+
 
     render() {
 
+        this.username = this.props.username;
+        this.wardno = this.props.wardno;
+        this.patientno = this.props.patientno;
 
         var style={width: 300, height: 220}
         var textAlign={textAlign: "center"}
@@ -37,6 +39,8 @@ export default class  Test extends Component {
 
         return<div>
 
+            <div className="content-wrapper">
+                <div className="container-fluid">
 
             <div className="card bg-light mb-3 Row" style={style}>
                 <div className="card-header" style={textAlign}>Test ID - {this.test.testId}</div>
@@ -54,6 +58,8 @@ export default class  Test extends Component {
 
 
 
+            </div>
+        </div>
             </div>
         </div>
     }

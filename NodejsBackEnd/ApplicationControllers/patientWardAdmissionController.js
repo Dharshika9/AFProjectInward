@@ -24,8 +24,9 @@ var patientWardAdmissionController= function () {
     };
 
     this.removeAdmission=function (id) {
+        console.log('I am called')
         return new Promise(function (resolve,reject) {
-            patientWardAdmissionSchema.delete({_id:id}).then(function () {
+            patientWardAdmissionSchema.remove({patientId:id}).then(function () {
                 resolve({status:200,message:'Admissin is deleted'})
             }).catch(function (err) {
                 reject({status:500, message:'Admission cannot be deleted '})
@@ -47,6 +48,16 @@ var patientWardAdmissionController= function () {
     this.getOneAdmission =function (id) {
         return new Promise(function (resolve,reject) {
             patientWardAdmissionSchema.find({wardNo:id}).exec().then(function (data) {
+                resolve({status:200, data:data })
+            }).catch(function (err) {
+                reject({status:404, message :'cannot find Admission '})
+            })
+        })
+    };
+
+    this.getAdmissioninfo =function (id) {
+        return new Promise(function (resolve,reject) {
+            patientWardAdmissionSchema.findOne({patientId:id}).exec().then(function (data) {
                 resolve({status:200, data:data })
             }).catch(function (err) {
                 reject({status:404, message :'cannot find Admission '})

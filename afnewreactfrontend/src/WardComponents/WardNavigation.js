@@ -15,7 +15,8 @@ export default class WardNavigation extends Component{
         this.state = {
             view: false,
             admission: false,
-            manage: false
+            manage: false,
+            logout: false
         }
     }
 
@@ -43,9 +44,21 @@ export default class WardNavigation extends Component{
         this.setState({manage: true})
     }
 
+    logoutclicked(event){
+        event.preventDefault();
+        event.stopPropagation();
+        this.setState({logout: true})
+    }
+
+
     render(){
 
         this.username = this.props.username;
+
+
+        if(this.state.logout){
+            return <Redirect to= '/'/>
+        }
 
         if(this.state.view){
             return <Redirect to={{
@@ -109,7 +122,7 @@ export default class WardNavigation extends Component{
                         <p>{this.username}</p>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <a className="nav-link" data-toggle="modal" data-target="#exampleModal" onClick={event => this.logoutclicked(event)}>
                             <i className="fa fa-fw fa-sign-out"></i>Logout</a>
                     </li>
                 </ul>

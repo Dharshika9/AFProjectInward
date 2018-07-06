@@ -35,5 +35,14 @@ router.get('/:id',function (req,res) {
     })
 })
 
+router.get('/information/:id',function (req,res) {
+    console.log(req.params.id);
+    controller.getAdmissioninfo(req.params.id).then(function (resData) {
+        res.status(resData.status).send(resData.data)
+    }).catch(function (err) {
+        res.status(err.status).send(err.message)
+    })
+})
+
 
 module.exports=router;

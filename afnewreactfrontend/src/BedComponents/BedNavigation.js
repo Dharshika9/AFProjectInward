@@ -16,7 +16,8 @@ export default class WardNavigation extends Component{
         this.state = {
             view: false,
             add: false,
-            admit: false
+            admit: false,
+            logout: false
         }
     }
 
@@ -38,6 +39,12 @@ export default class WardNavigation extends Component{
         this.setState({admit: true})
     }
 
+    logoutclicked(event){
+        event.preventDefault();
+        event.stopPropagation();
+        this.setState({logout: true})
+    }
+
     componentWillReceiveProps(props){
         this.setState(props)
     }
@@ -47,10 +54,15 @@ export default class WardNavigation extends Component{
 
         this.username = this.props.username;
         this.wardno =this.props.wardno;
+        this.patientno = this.props.patientno;
 
         // console.log(this.username);
         // console.log(this.wardno);
 
+
+        if(this.state.logout){
+            return <Redirect to= '/'/>
+        }
 
         if(this.state.view){
             return <Redirect to={{
@@ -69,6 +81,27 @@ export default class WardNavigation extends Component{
         if(this.state.admit){
             return <Redirect to={{
                 pathname: '/admitPatient',
+                state: { referrer: { username:this.username , wardno: this.wardno} }
+            }}/>
+        }
+
+        if(this.state.view){
+            return <Redirect to={{
+                pathname: '/viewBeds',
+                state: { referrer: { username:this.username , wardno: this.wardno} }
+            }}/>
+        }
+
+        if(this.state.view){
+            return <Redirect to={{
+                pathname: '/viewBeds',
+                state: { referrer: { username:this.username , wardno: this.wardno} }
+            }}/>
+        }
+
+        if(this.state.view){
+            return <Redirect to={{
+                pathname: '/viewBeds',
                 state: { referrer: { username:this.username , wardno: this.wardno} }
             }}/>
         }
@@ -112,7 +145,7 @@ export default class WardNavigation extends Component{
                         <p>{this.username}</p>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        <a className="nav-link" data-toggle="modal" data-target="#exampleModal" onClick={event => this.logoutclicked(event)}>
                             <i className="fa fa-fw fa-sign-out"></i>Logout</a>
                     </li>
                 </ul>

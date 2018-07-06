@@ -11,13 +11,13 @@ export default class bodySlide extends Component{
                 </ol>
                 <div className="carousel-inner" role="listbox">
                     <div className="carousel-item active">
-                        <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide"/>
+                        <img className="d-block img-fluid" src="1.jpg" alt="First slide"/>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide"/>
+                        <img className="d-block img-fluid" src="2.jpg" alt="Second slide"/>
                     </div>
                     <div className="carousel-item">
-                        <img className="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide"/>
+                        <img className="d-block img-fluid" src="3.jpg" alt="Third slide"/>
                     </div>
                 </div>
                 <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

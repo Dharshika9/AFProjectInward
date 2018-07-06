@@ -21,7 +21,7 @@ export  default class Bed extends Component{
         this.getBeDetails = this.props.getBeDetails;
 
         this.state = {
-            access : false,
+            access : false
 
         }
 

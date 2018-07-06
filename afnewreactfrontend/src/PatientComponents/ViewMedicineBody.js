@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 
 import axios from 'axios';
-import Wards from './maincomponents/Medicine';
+
 
 export default class ViewMedicineBody extends Component{
 
@@ -26,7 +26,7 @@ export default class ViewMedicineBody extends Component{
     render(){
         return <div className="content-wrapper">
             <div className="container-fluid">
-                <Medicine Med={this.state.Med} getMedicineDetails = {() => this.getMedicineDetails()}/>
+
 
             </div>
         </div>

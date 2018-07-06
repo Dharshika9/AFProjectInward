@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const patientRegistrationSchema = new Schema({
     patientId:{
-        type: Number,
+        type: String,
         require:true
     },
     patientName:{

@@ -65,10 +65,10 @@ var laborityTestController = function () {
 
     this.getOneTest=function (id) {
         return new Promise(function (resolve,reject) {
-            laborityTestSchema.find({_id:id}).exec().then(function (data) {
-                resolve({'status':200,'message':'Test','data':data})
+            laborityTestSchema.findOne({patientId:id}).exec().then(function (data) {
+                resolve({status:200, data:data})
             }).catch(function (err) {
-                reject({'status':404,'meassage':'Test not fount' + err})
+                reject({status:404,meassage:'Test not fount'})
             })
         })
     }

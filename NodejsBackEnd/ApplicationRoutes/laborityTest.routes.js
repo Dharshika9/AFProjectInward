@@ -38,7 +38,7 @@ router.get('/',function (req,res) {
 
 router.get('/:id',function (req,res) {
     controller.getOneTest(req.params.id).then(function (resData) {
-        res.status(resData.status).send(resData.message)
+        res.status(resData.status).send(resData.data)
     }).catch(function (err) {
         res.status(err.status).send(err.message)
     })
